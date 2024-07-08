@@ -12,24 +12,12 @@ from OSIsoft.AF.Data import AFBoundaryType
 from OSIsoft.AF.Time import AFTimeRange
 
 def connect_to_server(server_name):
-    """ open connection to PI Server
-
-    Keyword arguments:
-    server_name -- WTDHISTPI, WPHISTPI, or SPPISERVER
-    """
     pi_servers = PIServers()
     pi_server = pi_servers[server_name]
     pi_server.Connect(True, None)
     return pi_server
 
 def convert_values_to_frame(pi_data, tagname):
-    """ Reformats data from PI server to a pandas.DataFrame with PI
-   tagname as column header
-
-   Keyword arguments:
-   pi_data -- data returned for PIPoint
-   tagname -- PI tag name (string)
-    """
     if pi_data.Count > 0:
         dates = []
         values = []
