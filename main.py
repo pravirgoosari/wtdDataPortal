@@ -10,10 +10,10 @@ if __name__ == "__main__":
     pi_server = connect_to_server(server_name)
 
     # Input from user
-    start_time = "2024-07-08 17:19:00"  # "2024-07-08 17:19:00"
-    end_time = "2024-07-08 08:19:00"  # "2024-07-08 08:19:00"
+    start_time = "XXXX-XX-XX XX:XX:XX"  # "2024-07-08 17:19:00"
+    end_time = "XXXX-XX-XX XX:XX:XX"  # "2024-07-08 08:19:00"
     # sample interval(string: examples: 1w=1 week, 1d=1 day, 1h=1 hour, 1m=1 minute, 1s=1 second)
-    interval = "1m"
+    interval = "15s"
 
     # retrieve_recorded_to_frame(tagname, pi_server, start_time, end_time)
     data1 = retrieve_interpolated_to_frame(
