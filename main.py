@@ -1,6 +1,7 @@
 import os
 from modules.dataPull import *
 from modules.plotTrend import *
+from modules.dateTime import *
 
 if __name__ == "__main__":
     server_name = os.getenv('SERVERNAME')
@@ -10,29 +11,30 @@ if __name__ == "__main__":
     pi_server = connect_to_server(server_name)
 
     # Input from user
-    start_time = "XXXX-XX-XX XX:XX:XX"  # "2024-07-08 17:19:00"
-    end_time = "XXXX-XX-XX XX:XX:XX"  # "2024-07-08 08:19:00"
+    start_time = handle_user_input(
+        str("2024-07-08 17:19:00"))  # "XXXX-XX-XX XX:XX:XX"  #
+    end_time = handle_user_input("mon")  # "XXXX-XX-XX XX:XX:XX" # t-8h
     # sample interval(string: examples: 1w=1 week, 1d=1 day, 1h=1 hour, 1m=1 minute, 1s=1 second)
     interval = "15s"
 
     # retrieve_recorded_to_frame(tagname, pi_server, start_time, end_time)
-    data1 = retrieve_interpolated_to_frame(
+    data_PumpStationpump1 = retrieve_interpolated_to_frame(
         tagname1, pi_server, start_time, end_time, interval)
-    data2 = retrieve_interpolated_to_frame(
+    data_Ave11thNwOF = retrieve_interpolated_to_frame(
         tagname2, pi_server, start_time, end_time, interval)
-    data3 = retrieve_interpolated_to_frame(
+    data_Ave11thWeirLevel = retrieve_interpolated_to_frame(
         tagname3, pi_server, start_time, end_time, interval)
 
-    # if data3 is not None:
-    #    print(data3)
+    # if data# is not None:
+    #    print(data#)
     # else:
     #    print(f"No data found for tag {tagname3} between {start_time} and {end_time}.")
 
     #    singleTrend PLOT
-    # singleTrend(data3)
+    singleTrend(data_Ave11thWeirLevel)
 
     #   multipleTrend PLOT
     # Combine DataFrames
-    df_combined = merge_df_on_DateTime(data2, data3)
+    df_combined = merge_df_on_DateTime(data_Ave11thNwOF, data_Ave11thWeirLevel)
     # print(df_combined)
     multipleTrend(df_combined)
