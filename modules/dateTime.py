@@ -128,3 +128,52 @@ def handle_user_input(input_str):
             return result_datetime
         except ValueError as e:
             print(f"Input: {input_str} is invalid -> Error: {e}")
+
+
+"""if __name__ == '__main__':
+
+    ### check on different time input on start and end
+    # Input from user
+    start_time = "2024-07-08 17:19:00"  # "YYYY-MM-DD HH:MM:SS"
+    end_time = "t-8h"  # Abbreviation example
+
+    # Handle start time input
+    print(handle_user_input(start_time))
+
+    # Handle end time input
+    print(handle_user_input(end_time))
+
+
+    #
+    ###
+    # Variation of inputs that workkk!
+
+    input_str = '*'
+    result_datetime = interpret_datetime(input_str)
+    print(f"Input: {input_str} -> Result DateTime: {result_datetime}")
+
+    # Example usage
+    input_str = 't+8h'
+    result_datetime = interpret_datetime(input_str)
+    print(f"Input: {input_str} -> Result DateTime: {result_datetime}")
+
+    input_str = '*-30m'
+    result_datetime = interpret_datetime(input_str)
+    print(f"Input: {input_str} -> Result DateTime: {result_datetime}")
+
+    input_str = 'y+8h'
+    result_datetime = interpret_datetime(input_str)
+    print(f"Input: {input_str} -> Result DateTime: {result_datetime}")
+
+    input_str = 't'
+    result_datetime = interpret_datetime(input_str)
+    print(f"Input: {input_str} -> Result DateTime: {result_datetime}")
+
+    input_str = 'y-2y'
+    result_datetime = interpret_datetime(input_str)
+    print(f"Input: {input_str} -> Result DateTime: {result_datetime}")
+
+    input_str = 'y-8h'
+    result_datetime = interpret_datetime(input_str)
+    print(f"Input: {input_str} -> Result DateTime: {result_datetime}")
+"""
