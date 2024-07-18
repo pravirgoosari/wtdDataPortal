@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="100%" viewBox="0 0 1410 1013" width="100%" fill="#FFFFFF" image-rendering="optimizeSpeed" onload="SVG_doc_loaded(evt);" PB:pid="" xlink:xid="" xmlns:svg="OSI_SVG_20090601" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:PB="urn:osisoft-com-pb" xmlns:PBI="urn:osisoft-com-interface" xmlns:PBD="urn:osisoft-com-data" xmlns:xsi="http://www.w3.org/1999/XMLSchema/instance">
+	<defs><PBD:TagUses tag="\\wtdhistpi\11th.csostatus" PB:BO="PWSPIEventsBO.cBOEvents">
+			<PBI:Symbol name="Genericarrowdiagonal_1_MS" PB:Type="16" PB:Parent="Genericarrowdiagonal_1"/>
+		</PBD:TagUses><PBD:TagUses tag="\\wtdhistpi\11th.overflow" PB:BO="PWSPIEventsBO.cBOEvents">
+			<PBI:Symbol name="Value2" PB:Type="7"/>
+		</PBD:TagUses><PBD:TagUses tag="\\wtdhistpi\wptp600lb600111" PB:BO="PWSPIEventsBO.cBOEvents">
+			<PBI:Symbol name="Bar1" PB:Type="12"/>
+			<PBI:Symbol name="Value1" PB:Type="7"/>
+		</PBD:TagUses>
+	</defs>
+	<rect x="0" y="0" width="1410" height="1013" PB:DocMajorVersionNum="3" PB:DocMinorVersionNum="26" PB:DocGroup="1" PB:wnHeight="442" PB:wnWidth="570" PB:wnState="0" PB:Zoom="100" PB:LocalID="1033" PB:DisplayServerTimeZone="True" PB:Type="55">
+	</rect>
+	<PB:Dataset id="AF2_DS" PB:Type="57" PB:Context="2" PB:Description="" PB:RefreshInterval="10000" PB:Stepped="False" PB:DSType="3" PB:DSVisible="True">
+	</PB:Dataset>
+	<PB:Dataset id="E_DS_DS" PB:Type="57" PB:Context="2" PB:Description="" PB:RefreshInterval="5000" PB:Stepped="False" PB:DSType="3" PB:DSVisible="False">
+	</PB:Dataset>
+	<PB:Dataset id="MODULEDB_DS" PB:Type="57" PB:Context="2" PB:Description="" PB:RefreshInterval="5000" PB:Stepped="False" PB:DSType="3" PB:DSVisible="False">
+	</PB:Dataset>
+	<image id="Graphic1" x="3" y="-5" width="1399" height="1013" xlink:href="11thAveNW_Graphic1_1.jpg" PB:Type="13" PB:ImageSizing="2" PB:ImageOriginalFormat="0" PB:ImageIndex="1" PB:Linked="False">
+	</image>
+	<g id="Text1" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text1_pbTextBoundingRectEl" x="595" y="759" width="50" height="42" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text1_pbTextEl" x="595" y="790.5" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857">72"</text>
+	</g>
+	<g id="Text2" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text2_pbTextBoundingRectEl" x="87" y="643" width="50" height="42" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text2_pbTextEl" x="87" y="674.5" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857">54"</text>
+	</g>
+	<g id="Text3" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text3_pbTextBoundingRectEl" x="1225" y="63" width="167" height="42" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text3_pbTextEl" x="1225" y="94.5" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857">116"x69.5"</text>
+	</g>
+	<g id="Text4" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text4_pbTextBoundingRectEl" x="254" y="222" width="386" height="63" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text4_pbTextEl" x="254" y="269.25" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold">11TH AVE. NW</text>
+	</g>
+	<g id="Text5" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text5_pbTextBoundingRectEl" x="90" y="280" width="614" height="63" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text5_pbTextEl" x="90" y="327.25" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold">OVERFLOW CHAMBER</text>
+	</g>
+	<g id="Text6" fill="#000000" stroke="none" font-family="Arial" font-size="36.6666652096643" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text6_pbTextBoundingRectEl" x="683" y="664" width="265" height="45" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text6_pbTextEl" x="683" y="697.75" fill="#000000" stroke="none" font-family="Arial" font-size="36.6666652096643">11TH AVE. NW</text>
+	</g>
+	<g id="Genericarrowdiagonal_1" PB:FillColor="16711680" transform="translate(442,844)" PB:FillStyle="3" PB:BackgroundColor="-1" PB:IsMultiState="True" PB:Type="16" PB:Visible="True" PB:TBHandle="33008" PB:Rotation="0" PB:Flip="3">
+		<rect id="Genericarrowdiagonal_1_pbBoundingRectEl" x="442" y="844" width="98" height="87" fill="none" stroke-width="0">
+		</rect>
+		<svg height="87" viewBox="0 0 999 993" width="98" preserveAspectRatio="none">
+			<path style="fill:#00FF00;stroke:#000;stroke-width:2" d="M706,890 l-706,103 105,-707 109,108 -51,345 738,-739 98,97 -740,738 345,-51 102,106z" PB:OriginalStyle="fill:#00f;stroke:#000;stroke-width:2">
+			</path>
+		</svg>
+		<PB:MultiState id="Genericarrowdiagonal_1_MS" BlinkBadData="0" ColorBadData="none" CurrentState="0" PBD:PtTagName="\\wtdhistpi\11th.csostatus" PB:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi65 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?8119\11TH.CSOSTATUS" TagName="11TH.CSOSTATUS" PtTagValue="0" ServerName="wtdhistpi" StateCount="2">
+			<PB:MSState id="Genericarrowdiagonal_1_MSS1" Blink="0" Color="#00FF00" LowerValue="0" UpperValue="0"/>
+			<PB:MSState id="Genericarrowdiagonal_1_MSS2" Blink="0" Color="#FF0000" LowerValue="1" UpperValue="1"/>
+		</PB:MultiState>
+	</g>
+	<g id="Genericarrowdiagonal_2" PB:FillColor="255" transform="translate(1244,113)" PB:FillStyle="3" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="33008" PB:Rotation="0" PB:Flip="3">
+		<rect id="Genericarrowdiagonal_2_pbBoundingRectEl" x="1244" y="113" width="98" height="69" fill="none" stroke-width="0">
+		</rect>
+		<svg height="69" viewBox="0 0 999 993" width="98" preserveAspectRatio="none">
+			<path style="fill:#f00;stroke:#000;stroke-width:2" d="M706,890 l-706,103 105,-707 109,108 -51,345 738,-739 98,97 -740,738 345,-51 102,106z">
+			</path>
+		</svg>
+	</g>
+	<g id="Genericarrow_1" PB:FillColor="255" transform="translate(196,640)" PB:FillStyle="3" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="11311" PB:Rotation="0" PB:Flip="0">
+		<rect id="Genericarrow_1_pbBoundingRectEl" x="196" y="640" width="106" height="61" fill="none" stroke-width="0">
+		</rect>
+		<svg height="61" viewBox="0 0 992 592" width="106" preserveAspectRatio="none">
+			<path style="fill:#f00;stroke:#000;stroke-width:2" d="M0,297 l412,295 0,-125 -156,-111 736,0 0,-59 0,-60 -736,0 156,-112 0,-125 -412,297z">
+			</path>
+		</svg>
+	</g>
+	<g id="Bar1" fill="#808080" stroke="none" font-family="Arial" font-size="33.3333320087857" PB:IsMultiState="False" PB:LineStyle="0" PB:Lower="115.099998474121" PB:Orientation="0" PB:ShowScales="False" PB:DisplayScaleInside="True" PB:CanonicalNumberFormat="General" PB:TagInfoType="0" PBD:PtTagName="\\wtdhistpi\wptp600lb600111" PB:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi66 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7112\WPTP600LB600111" PB:PtTagStatus="" PB:PtTagTime="" PB:PtTagValue="115.617500305176" PB:Start="115.099998474121" PB:Type="12" PB:Upper="119.099998474121" PB:Visible="True">
+		<rect id="Bar1_pbBarBoundingRectEl" x="1049" y="273" width="35" height="272" fill="#00FFFF" stroke="#808080" stroke-width="2px" font-family="Arial" font-size="33.3333320087857">
+		</rect>
+		<rect id="Bar1_pbBarTagRectEl" x="1049" y="510" width="35" height="35" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857">
+		</rect>
+	</g>
+	<g id="Text7" fill="#000000" stroke="none" font-family="Arial" font-size="36.6666652096643" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text7_pbTextBoundingRectEl" x="735" y="452" width="140" height="45" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text7_pbTextEl" x="735" y="485.75" fill="#000000" stroke="none" font-family="Arial" font-size="36.6666652096643">Weir EL</text>
+	</g>
+	<g id="Text8" fill="#FF0000" stroke="none" font-family="Arial" font-size="36.6666652096643" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text8_pbTextBoundingRectEl" x="743" y="500" width="148" height="45" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text8_pbTextEl" x="743" y="533.75" fill="#FF0000" stroke="none" font-family="Arial" font-size="36.6666652096643">118.16 ft</text>
+	</g>
+	<g id="Text9" fill="#000000" stroke="none" font-family="Arial" font-size="36.6666652096643" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text9_pbTextBoundingRectEl" x="891" y="220" width="183" height="45" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text9_pbTextEl" x="891" y="253.75" fill="#000000" stroke="none" font-family="Arial" font-size="36.6666652096643">Trunk Elev</text>
+	</g>
+	<g id="Value1" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PB:CanonicalNumberFormat="0.00" PB:TagInfoType="0" PBD:PtTagName="\\wtdhistpi\wptp600lb600111" PB:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi66 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7112\WPTP600LB600111" PB:PtTagStatus="0" PB:PtTagTime="6/13/2013 3:56:07 PM" PB:PtTagValue="115.62 FEET" PB:Type="7" PB:Visible="True">
+		<rect id="Value1_pbTextBoundingRectEl" x="828" y="361" width="223" height="42" fill="#00FFFF" stroke-width="0">
+		</rect>
+		<text id="Value1_pbTextEl" x="940" y="392" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" text-anchor="middle" PBD:Property="value">115.62 FEET</text>
+	</g>
+	<g id="Text10" fill="#000000" stroke="none" font-family="Arial" font-size="36.6666652096643" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text10_pbTextBoundingRectEl" x="582" y="870" width="124" height="48" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text10_pbTextEl" x="582" y="906" fill="#000000" stroke="none" font-family="Arial" font-size="36.6666652096643" font-weight="bold">Outfall</text>
+	</g>
+	<g id="Text11" fill="#000000" stroke="none" font-family="Arial" font-size="36.6666652096643" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text11_pbTextBoundingRectEl" x="26" y="563" width="389" height="48" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text11_pbTextEl" x="26" y="599" fill="#000000" stroke="none" font-family="Arial" font-size="36.6666652096643" font-weight="bold">To Ballard Regulator</text>
+	</g>
+	<g id="Scalefrom0to20style2_1" PB:FillColor="-1" transform="translate(1084,284)" PB:FillStyle="1" PB:BackgroundColor="16777215" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="2089148160" PB:Rotation="0" PB:Flip="2">
+		<rect id="Scalefrom0to20style2_1_pbBoundingRectEl" x="1084" y="284" width="37" height="268" fill="none" stroke-width="0">
+		</rect>
+		<svg height="268" viewBox="0 0 200 998" width="37" preserveAspectRatio="none">
+			<rect x="0" y="0" width="200" height="998" fill="#fff" stroke-width="0">
+			</rect>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,0 l200,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,50 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,298 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,548 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,798 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,100 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,348 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,598 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,848 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,150 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,398 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,648 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,898 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,200 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,448 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,698 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,948 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,250 l200,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,498 l200,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,748 l200,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,998 l200,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,25 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,273 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,523 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,773 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,75 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,323 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,573 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,823 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,125 l100,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,373 l100,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,623 l100,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,873 l100,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M50,175 l-50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M50,423 l-50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M50,673 l-50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M50,923 l-50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,225 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,473 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,723 l50,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,973 l50,0">
+			</path>
+		</svg>
+	</g>
+	<g id="Text12" fill="#808080" stroke="none" font-family="Arial" font-size="26.6666656070286" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text12_pbTextBoundingRectEl" x="1113" y="533" width="77" height="37" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text12_pbTextEl" x="1113" y="560.75" fill="#808080" stroke="none" font-family="Arial" font-size="26.6666656070286" font-weight="bold">115 ft</text>
+	</g>
+	<g id="Line1" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+		<line id="Line1_Line" stroke="#FF0000" stroke-width="3px" x1="1094" y1="341" x2="902" y2="490" PB:LineEnds="0" PB:LineStyle="0">
+		</line>
+	</g>
+	<g id="Text13" fill="#808080" stroke="none" font-family="Arial" font-size="26.6666656070286" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text13_pbTextBoundingRectEl" x="1118" y="266" width="77" height="37" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text13_pbTextEl" x="1118" y="293.75" fill="#808080" stroke="none" font-family="Arial" font-size="26.6666656070286" font-weight="bold">119 ft</text>
+	</g>
+	<g id="Text14" fill="#808080" stroke="none" font-family="Arial" font-size="26.6666656070286" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Text14_pbTextBoundingRectEl" x="1122" y="397" width="77" height="37" fill="#FFFFFF" stroke-width="0">
+		</rect>
+		<text id="Text14_pbTextEl" x="1122" y="424.75" fill="#808080" stroke="none" font-family="Arial" font-size="26.6666656070286" font-weight="bold">117 ft</text>
+	</g>
+	<g id="Line2" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+		<line id="Line2_Line" stroke="#FF0000" stroke-dasharray="6.5mm,3mm,3mm,3mm,3mm,3mm" stroke-width="3px" x1="899" y1="492" x2="709" y2="492" PB:LineEnds="0" PB:LineStyle="4">
+		</line>
+	</g>
+	<g id="Line3" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+		<line id="Line3_Line" stroke="#FF0000" stroke-width="3px" x1="1255" y1="342" x2="1065" y2="342" PB:LineEnds="0" PB:LineStyle="0">
+		</line>
+	</g>
+	<g id="Value2" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PB:CanonicalNumberFormat="0.00" PB:TagInfoType="0" PBD:PtTagName="\\wtdhistpi\11th.overflow" PB:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi64 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?8559\11TH.OVERFLOW" PB:PtTagStatus="0" PB:PtTagTime="6/13/2013 3:56:07 PM" PB:PtTagValue="0.00 mgd" PB:Type="7" PB:Visible="True">
+		<rect id="Value2_pbTextBoundingRectEl" x="548" y="923" width="154" height="42" fill="#00FFFF" stroke-width="0">
+		</rect>
+		<text id="Value2_pbTextEl" x="625" y="954" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" text-anchor="middle" PBD:Property="value">0.00 mgd</text>
+	</g>
+	<script language="JavaScript" type="text/javascript"> 
+        
+        function SVG_doc_loaded(evt)
+	{
+	    var parentDoc = evt.getTarget().getOwnerDocument();
+	    var elem = parentDoc.createElement("Ready");
+	    evt.getTarget().appendChild(elem);
+
+        }</script>
+</svg>
