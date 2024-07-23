@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import SinglePointTrend from './components/SinglePointTrend';
+import MultiPointTrend from './components/MultiPointTrend';
+import TrendTimeRange from './components/TrendTimeRange';
+import './App.css';
 
 function App() {
   const [multipointSrc, setMultipointSrc] = useState('');
   const [singlepointSrc, setSinglepointSrc] = useState('');
   const [schematicSrc, setSchematicSrc] = useState('');
+  const [plot, setPlot] = useState(0);
 
   useEffect(() => {
     axios.get('http://localhost:5000/test')
@@ -20,20 +25,36 @@ function App() {
       });
   }, []);
 
+//*<div className="App">
+//<DateIntervalForm />
+//</div> */
+
+
   return (
     <div className="App">
       <h1>Data Portal</h1>
-      <div>
-        <h2>Multipoint Trend</h2>
-        <iframe src={multipointSrc} title="Multipoint Trend" width="100%" height="500px" />
+
+      <div className="row">
+        <div className="schematic-image">
+          <div>
+          <h2>Regulator Station Schematic</h2>
+          <img src={schematicSrc} alt="Schematic" style={{ width: '50%' }} />
+          </div>
+        </div>
+        <div className="schematic-input-form">
+          <TrendTimeRange /> {/* Embed the TrendTimeRange component */}
+        </div>
       </div>
-      <div>
-        <h2>Singlepoint Trend</h2>
-        <iframe src={singlepointSrc} title="Singlepoint Trend" width="100%" height="500px" />
-      </div>
-      <div>
-        <h2>Schematic</h2>
-        <img src={schematicSrc} alt="Schematic" style={{ width: '100%' }} />
+
+      <div className="plot-row">
+        <div className="schematic-plot">
+          {/*<h2>Single Plot</h2>*/}
+          {singlepointSrc && <SinglePointTrend src={singlepointSrc} />}
+        </div>
+        <div className="schematic-plot">
+          {/*<h2>Multi Plot</h2>*/}
+          {multipointSrc && <MultiPointTrend src={multipointSrc} />}
+        </div>
       </div>
     </div>
   );

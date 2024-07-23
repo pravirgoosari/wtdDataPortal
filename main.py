@@ -1,21 +1,25 @@
 import os
 from flask import Flask, send_file, jsonify
+from flask_cors import CORS
 from modules.dataPull import *
 from modules.plotTrend import *
 from modules.dateTime import *
 from modules.image_display import *
 
 app = Flask(__name__)
+CORS(app)  # This will enable CORS for all routes
+
 
 @app.route('/')
 def index():
     return "Flask server is running!"
 
+
 @app.route('/multipoint_trend')
 def get_multipoint_trend():
     try:
         server_name = os.getenv('SERVERNAME')
-        tagname1 = os.getenv('pumpStationpump1')
+        # tagname1 = os.getenv('pumpStationpump1')
         tagname2 = os.getenv('Ave11thNwOF')
         tagname3 = os.getenv('Ave11thWeirLevel')
         pi_server = connect_to_server(server_name)
@@ -29,13 +33,16 @@ def get_multipoint_trend():
         data_Ave11thWeirLevel = retrieve_interpolated_to_frame(
             tagname3, pi_server, start_time, end_time, interval)
 
-        df_combined = merge_df_on_DateTime(data_Ave11thNwOF, data_Ave11thWeirLevel)
-        plot_path = multipleTrend(df_combined)
-        print(f"Serving multipoint trend from {plot_path}")
-        return send_file(plot_path, mimetype='text/html')
+        df_combined = merge_df_on_DateTime(
+            data_Ave11thNwOF, data_Ave11thWeirLevel)
+        plot_data = multipleTrend(df_combined)
+        print(f"Serving multipoint trend")
+        return plot_data
+        # send_file(plot_path, mimetype='text/html')
     except Exception as e:
         print(f"Error serving multipoint trend: {e}")
         return jsonify({"error": str(e)})
+
 
 @app.route('/singlepoint_trend')
 def get_singlepoint_trend():
@@ -50,12 +57,15 @@ def get_singlepoint_trend():
 
         data_Ave11thWeirLevel = retrieve_interpolated_to_frame(
             tagname3, pi_server, start_time, end_time, interval)
-        plot_path = singleTrend(data_Ave11thWeirLevel)
-        print(f"Serving singlepoint trend from {plot_path}")
-        return send_file(plot_path, mimetype='text/html')
+        plot_data = singleTrend(data_Ave11thWeirLevel)
+
+        print(f"Serving singlepoint trend data ")
+        return plot_data  # jsonify(plot_data)
+        # send_file(plot_path, mimetype='text/html')
     except Exception as e:
         print(f"Error serving singlepoint trend: {e}")
         return jsonify({"error": str(e)})
+
 
 @app.route('/schematic')
 def get_schematic():
@@ -68,9 +78,11 @@ def get_schematic():
         print(f"Error serving schematic: {e}")
         return jsonify({"error": str(e)})
 
+
 @app.route('/test')
 def test():
     return jsonify({"status": "Flask server is running"})
+
 
 if __name__ == "__main__":
     app.run(debug=True)
