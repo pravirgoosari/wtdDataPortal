@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SinglePointTrend from './components/SinglePointTrend';
+import MultiPointTrend from './components/MultiPointTrend';
+import TrendTimeRange from './components/TrendTimeRange';
 import './App.css';
 
 function App() {
-  const [multipointSrc, setMultipointSrc] = useState('');
-  const [singlepointSrc, setSinglepointSrc] = useState('');
+  const [multipointPlotData, setMultipointPlotData] = useState({ data: [], layout: {} });
+  const [singlepointPlotData, setSinglepointPlotData] = useState({ data: [], layout: {} });
   const [schematicSrc, setSchematicSrc] = useState('');
 
   useEffect(() => {
     axios.get('http://localhost:5000/test')
       .then(response => {
         if (response.data.status === 'Flask server is running') {
-          setMultipointSrc('http://localhost:5000/multipoint_trend');
-          setSinglepointSrc('http://localhost:5000/singlepoint_trend');
           setSchematicSrc('http://localhost:5000/schematic');
         }
       })
@@ -21,6 +22,19 @@ function App() {
         console.error("There was an error connecting to the Flask server!", error);
       });
   }, []);
+
+  const handleSinglepointPlotDataChange = (newPlotData) => {
+    setSinglepointPlotData(newPlotData);
+  };
+
+  const handleMultipointPlotDataChange = (newPlotData) => {
+    setMultipointPlotData(newPlotData);
+  };
+
+  const handleClick = (sectionName) => {
+    console.log('Clicked on:', sectionName);
+    // Your backend update logic here
+  };
 
   return (
     <div className="App container-fluid">
@@ -51,23 +65,10 @@ function App() {
             <div className="col-md-6">
               <div className="card mb-4">
                 <div className="card-body">
-                  <h2>Time Trend Range</h2>
-                  <form>
-                    <div className="form-group">
-                      <label htmlFor="startDateTime">Start Time:</label>
-                      <input type="datetime-local" id="startDateTime" className="form-control" />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="endDateTime">End Time:</label>
-                      <input type="datetime-local" id="endDateTime" className="form-control" />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="interval">Interval:</label>
-                      <input type="number" id="interval" className="form-control" />
-                    </div>
-                    <button type="button" className="btn btn-primary mr-2">Apply</button>
-                    <button type="button" className="btn btn-secondary">Refresh</button>
-                  </form>
+                <TrendTimeRange onSinglePlotDataChange={handleSinglepointPlotDataChange}
+          onMultiPlotDataChange={handleMultipointPlotDataChange}/>
+						  
+												
                 </div>
               </div>
               <div className="card">
@@ -81,13 +82,15 @@ function App() {
               <div className="card mb-4">
                 <div className="card-body">
                   <h2>Single Point Trend</h2>
-                  <iframe src={singlepointSrc} title="Singlepoint Trend" className="w-100" style={{ height: '300px', border: 'none' }} />
+                           
+                  <SinglePointTrend plotData={singlepointPlotData} />
+                  
                 </div>
               </div>
               <div className="card">
                 <div className="card-body">
                   <h2>Multi Point Trend</h2>
-                  <iframe src={multipointSrc} title="Multipoint Trend" className="w-100" style={{ height: '300px', border: 'none' }} />
+                  <MultiPointTrend plotData={multipointPlotData}/>
                 </div>
               </div>
             </div>

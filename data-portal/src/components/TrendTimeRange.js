@@ -56,56 +56,25 @@ const TrendTimeRange = ({ onSinglePlotDataChange, onMultiPlotDataChange }) => {
   };
 
   return (
-    <div className="trend-time-range">
-      <h2>Trend Time Range</h2>
-      <form id="inputForm">
+    <>
+      <h2>Time Trend Range</h2>
+      <form>
         <div className="form-group">
-          <label htmlFor="startDateTime">Start Date & Time: </label>
-          <br />
-          <input
-            type="datetime-local"
-            id="startDateTime"
-            name="startDateTime"
-            value={startDateTime}
-            onChange={handleInputChange}
-            className="datetime-input"
-            required
-          />
+          <label htmlFor="startDateTime">Start Time:</label>
+          <input type="datetime-local" id="startDateTime" className="form-control" value={startDateTime} onChange={handleInputChange} required/>
         </div>
         <div className="form-group">
-          <label htmlFor="endDateTime">End Date & Time : </label>
-          <br />
-          <input
-            type="datetime-local"
-            id="endDateTime"
-            name="endDateTime"
-            value={endDateTime}
-            onChange={handleInputChange}
-            className="datetime-input"
-            required
-          />
+          <label htmlFor="endDateTime">End Time:</label>
+          <input type="datetime-local" id="endDateTime" className="form-control" value={endDateTime} onChange={handleInputChange} required/>
         </div>
         <div className="form-group">
-          <label htmlFor="interval">Interval : </label>
-          <input
-            type="text"
-            id="interval"
-            name="interval"
-            value={interval}
-            onChange={handleInputChange}
-            placeholder="Enter interval like 1s, 5s, 5m"
-          />
+          <label htmlFor="interval">Interval:</label>
+          <input type="number" id="interval" className="form-control" value={interval} onChange={handleInputChange} required/>
         </div>
-        <div className="form-group">
-          <button type="button" onClick={applyFilters}>
-            Apply
-          </button>
-          <button type="button" onClick={refreshPage}>
-            Refresh
-          </button>
-        </div>
+        <button type="button" className="btn btn-primary mr-2" onClick={applyFilters}>Apply</button>
+        <button type="button" className="btn btn-secondary" onClick={refreshPage}>Refresh</button>
       </form>
-    </div>
+</>
   );
 };
 
