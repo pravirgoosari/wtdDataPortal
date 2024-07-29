@@ -120,3 +120,14 @@ def retrieve_interpolated_to_frame(tagname, pi_server, start, end, interval, blo
 def merge_df_on_DateTime(df1, df2):
     combined_df = pd.merge(df1, df2, on='DateTime')
     return combined_df
+
+
+# Fetch the current value of a PI Point
+def fetch_data_from_pi(pi_server, tagname):
+    try:
+        point = PIPoint.FindPIPoint(pi_server, tagname)
+        last_data = point.Snapshot()
+        return last_data.Value
+    except Exception as e:
+        print(f"Error fetching data for point {tagname}: {e}")
+        return None

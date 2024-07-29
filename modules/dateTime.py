@@ -117,6 +117,7 @@ def interpret_datetime(input_str):
 
 def handle_user_input(input_str):
     if validate_datetime_format(input_str):
+        print(input_str)
         # Input is already in the correct format
         result_datetime = datetime.strptime(input_str, "%Y-%m-%d %H:%M:%S")
         return result_datetime
