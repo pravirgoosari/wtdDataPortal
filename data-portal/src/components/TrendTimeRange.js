@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import axios from 'axios';
 import './css/TrendTimeRange.css'; 
 
-const TrendTimeRange = ({ onSinglePlotDataChange, onMultiPlotDataChange }) => {
+const TrendTimeRange = ({ onSinglePlotDataChange, onMultiPlotDataChange, selectedValue }) => {
   const [startDateTime, setStartDateTime] = useState('');
   const [endDateTime, setEndDateTime] = useState('');
   const [interval, setInterval] = useState('15s');
+
+  useEffect(() => {
+    if (selectedValue) {
+      console.log(selectedValue)
+      applyFilters();
+    }
+  }, [selectedValue]);
+
 
   const applyFilters = async () => {
     try {
@@ -21,12 +29,16 @@ const TrendTimeRange = ({ onSinglePlotDataChange, onMultiPlotDataChange }) => {
         startDateTime: startDateTimeFormatted,
         endDateTime: endDateTimeFormatted,
         interval: interval,
+        type: selectedValue, 
+        
       });
       const multiPointResponse = await axios.post('http://localhost:5000/multipoint_trend', {
         startDateTime: startDateTimeFormatted,
         endDateTime: endDateTimeFormatted,
-        interval: interval,
+        interval: interval
       });
+
+
 
       // Pass the response data to the parent component
       onSinglePlotDataChange(singlePointResponse.data);
