@@ -55,14 +55,21 @@ def get_multipoint_trend():
 def get_singlepoint_trend():
     try:
         data = request.json
-        # print('Received POST data:', data)
+        print('Received POST data:', data)
         # Data contains startDateTime, endDateTime, and interval
         startDateTime_inp = data.get('startDateTime')
         endDateTime_inp = data.get('endDateTime')
         interval_inp = data.get('interval')
-
+        selected_value = data.get('type')
+        tagname = ''
+        if selected_value == 'FEET':
+            tagname = os.getenv('Ave11thNwOF')
+        elif selected_value == 'mgd':
+            tagname = os.getenv('Ave11thWeirLevel')
+        print("Tagname"+tagname)
+        print("selectedvalue"+selected_value)
         server_name = os.getenv('SERVERNAME')
-        tagname3 = os.getenv('Ave11thWeirLevel')
+        # tagname3 = os.getenv('Ave11thWeirLevel')
         pi_server = connect_to_server(server_name)
 
         start_time = handle_user_input(startDateTime_inp)  # str("mon-8h"))  #
@@ -70,9 +77,9 @@ def get_singlepoint_trend():
         interval = interval_inp  # '15s'  # interval_inp
 
         print(start_time, ":", end_time, ":", interval)
-        data_Ave11thWeirLevel = retrieve_interpolated_to_frame(
-            tagname3, pi_server, start_time, end_time, interval)
-        plot_data = singleTrend(data_Ave11thWeirLevel)
+        data_singleplot = retrieve_interpolated_to_frame(
+            tagname, pi_server, start_time, end_time, interval)
+        plot_data = singleTrend(data_singleplot)
 
         print(f"Serving singlepoint trend data ")
         return plot_data  # jsonify(plot_data)
@@ -80,6 +87,9 @@ def get_singlepoint_trend():
     except Exception as e:
         print(f"Error serving singlepoint trend: {e}")
         return jsonify({"error": str(e)})
+    finally:
+        if (pi_server):
+            pi_server.Disconnect()
 
 
 @app.route('/schematic')

@@ -10,6 +10,7 @@ function App() {
   const [multipointPlotData, setMultipointPlotData] = useState({ data: [], layout: {} });
   const [singlepointPlotData, setSinglepointPlotData] = useState({ data: [], layout: {} });
   const [schematicSrc, setSchematicSrc] = useState('');
+  const [selectedValue, setSelectedValue] = useState('');
 
   useEffect(() => {
     axios.get('http://localhost:5000/test')
@@ -23,6 +24,20 @@ function App() {
       });
   }, []);
 
+
+  // Fetch single point plot data based on selected value
+  useEffect(() => {
+    if (selectedValue) {
+      axios.get(`http://localhost:5000/singlepoint_trend?value=${selectedValue}`)
+        .then(response => {
+          setSinglepointPlotData(response.data);
+        })
+        .catch(error => {
+          console.error("There was an error fetching single point plot data!", error);
+        });
+    }
+  }, [selectedValue]);
+
   const handleSinglepointPlotDataChange = (newPlotData) => {
     setSinglepointPlotData(newPlotData);
   };
@@ -32,8 +47,8 @@ function App() {
   };
 
   const handleClick = (sectionName) => {
-    console.log('Clicked on:', sectionName);
-    // Your backend update logic here
+    console.log('Clicked on:',sectionName);
+    setSelectedValue(sectionName.trim());
   };
 
   return (
@@ -66,7 +81,9 @@ function App() {
               <div className="card mb-4">
                 <div className="card-body">
                 <TrendTimeRange onSinglePlotDataChange={handleSinglepointPlotDataChange}
-          onMultiPlotDataChange={handleMultipointPlotDataChange}/>
+                onMultiPlotDataChange={handleMultipointPlotDataChange}
+                onClick={handleClick}
+                selectedValue={selectedValue}/>
 						  
 												
                 </div>
@@ -75,6 +92,16 @@ function App() {
                 <div className="card-body">
                   <h2>Schematic</h2>
                   <img src={schematicSrc} alt="Schematic" className="img-fluid" />
+                   <div
+                  className="clickable-area area1"
+                  onClick={() => handleClick('FEET')}
+                  title="FEET"
+                ></div>
+                <div
+                  className="clickable-area area2"
+                  onClick={() => handleClick(' mgd')}
+                  title="mgd"
+                ></div>
                 </div>
               </div>
             </div>
