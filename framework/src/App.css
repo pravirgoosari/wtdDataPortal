@@ -1,0 +1,47 @@
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.sidebar {
+  background-color: #f8f9fa;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar h1 {
+  font-size: 18px;
+  color: #004085;
+  font-weight: bold;
+}
+
+.sidebar h2 {
+  font-size: 16px;
+  color: #0056b3;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  color: #0056b3;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.table th {
+  background-color: #e9ecef;
+  font-weight: bold;
+}
+
+.table td {
+  vertical-align: middle;
+}
