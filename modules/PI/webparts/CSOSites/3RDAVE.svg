@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns:ns0="urn:osisoft-com-pb" xmlns:ns1="http://www.w3.org/1999/xlink" xmlns:ns2="urn:osisoft-com-data" xmlns:ns3="urn:osisoft-com-interface" height="100%" viewBox="0 0 1812 1257" width="100%" fill="#FFFFFF" image-rendering="optimizeSpeed" onload="SVG_doc_loaded(evt);" ns0:pid="" ns1:xid="">
+<defs>
+<ns2:TagUses tag="\\wtdhistpi\3rd.csostatus" ns0:BO="PWSPIEventsBO.cBOEvents">
+<ns3:Symbol name="Genericarrow_1_MS" ns0:Type="16" ns0:Parent="Genericarrow_1" />
+</ns2:TagUses>
+<ns2:TagUses tag="\\wtdhistpi\3rd.overflow" ns0:BO="PWSPIEventsBO.cBOEvents">
+<ns3:Symbol name="Value3" ns0:Type="7" />
+</ns2:TagUses>
+<ns2:TagUses tag="\\wtdhistpi\wptp.lb603109.value" ns0:BO="PWSPIEventsBO.cBOEvents">
+<ns3:Symbol name="Bar4" ns0:Type="12" />
+<ns3:Symbol name="Value1" ns0:Type="7" />
+</ns2:TagUses>
+<ns2:TagUses tag="\\wtdhistpi\wptp.lb603109b.value" ns0:BO="PWSPIEventsBO.cBOEvents">
+<ns3:Symbol name="Value7" ns0:Type="7" />
+</ns2:TagUses>
+<ns2:TagUses tag="\\wtdhistpi\wptp600lb603104a" ns0:BO="PWSPIEventsBO.cBOEvents">
+<ns3:Symbol name="Bar1" ns0:Type="12" />
+<ns3:Symbol name="Value2" ns0:Type="7" />
+</ns2:TagUses>
+<ns2:TagUses tag="\\wtdhistpi\wptp600lb603108a" ns0:BO="PWSPIEventsBO.cBOEvents">
+<ns3:Symbol name="Bar3" ns0:Type="12" />
+<ns3:Symbol name="Value5" ns0:Type="7" />
+</ns2:TagUses>
+<ns2:TagUses tag="\\wtdhistpi\wptp600lb603109a" ns0:BO="PWSPIEventsBO.cBOEvents">
+<ns3:Symbol name="Bar6" ns0:Type="12" />
+<ns3:Symbol name="Value9" ns0:Type="7" />
+</ns2:TagUses>
+</defs>
+<rect x="0" y="0" width="1812" height="1257" ns0:DocMajorVersionNum="3" ns0:DocMinorVersionNum="26" ns0:DocGroup="1" ns0:wnHeight="534" ns0:wnWidth="722" ns0:wnState="0" ns0:Zoom="99" ns0:LocalID="1033" ns0:DisplayServerTimeZone="True" ns0:Type="55"> </rect>
+<ns0:Dataset id="AF2_DS" ns0:Type="57" ns0:Context="2" ns0:Description="" ns0:RefreshInterval="10000" ns0:Stepped="False" ns0:DSType="3" ns0:DSVisible="True"> </ns0:Dataset>
+<ns0:Dataset id="E_DS_DS" ns0:Type="57" ns0:Context="2" ns0:Description="" ns0:RefreshInterval="5000" ns0:Stepped="False" ns0:DSType="3" ns0:DSVisible="False"> </ns0:Dataset>
+<ns0:Dataset id="MODULEDB_DS" ns0:Type="57" ns0:Context="2" ns0:Description="" ns0:RefreshInterval="5000" ns0:Stepped="False" ns0:DSType="3" ns0:DSVisible="False"> </ns0:Dataset>
+<image id="Graphic1" x="9" y="8" width="1779" height="1237" ns1:href="3RDAVE_Graphic1_1.jpg" ns0:Type="13" ns0:ImageSizing="2" ns0:ImageOriginalFormat="0" ns0:ImageIndex="1" ns0:Linked="False"> </image>
+<g id="Text30" fill="#FF0000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text30_pbTextBoundingRectEl" x="889" y="447" width="143" height="50" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text30_pbTextEl" x="889" y="484.5" fill="#FF0000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">116.9 ft</text>
+</g>
+<g id="Line2" ns0:IsMultiState="False" ns0:Type="1" ns0:Visible="True">
+<line id="Line2_Line" stroke="#FF0000" stroke-width="3px" x1="841" y1="440" x2="1044" y2="440" ns0:LineEnds="0" ns0:LineStyle="0"> </line>
+</g>
+<g id="Text31" fill="#FF0000" stroke="none" font-family="Arial" font-size="36.6666652096643" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text31_pbTextBoundingRectEl" x="897" y="492" width="145" height="48" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text31_pbTextEl" x="897" y="528" fill="#FF0000" stroke="none" font-family="Arial" font-size="36.6666652096643" font-weight="bold">Weir EL</text>
+</g>
+<g id="Bar4" fill="#808080" stroke="none" font-family="Arial" font-size="33.3333320087857" ns0:IsMultiState="False" ns0:LineStyle="0" ns0:Lower="108.580001831055" ns0:Orientation="0" ns0:ShowScales="False" ns0:DisplayScaleInside="True" ns0:CanonicalNumberFormat="General" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\wptp.lb603109.value" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi70 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7124\WPTP.LB603109.VALUE" ns0:PtTagStatus="" ns0:PtTagTime="" ns0:PtTagValue="0" ns0:Start="108.580001831055" ns0:Type="12" ns0:Upper="130" ns0:Visible="True">
+<rect id="Bar4_pbBarBoundingRectEl" x="616" y="516" width="35" height="222" fill="#00FFFF" stroke="#808080" stroke-width="2px" font-family="Arial" font-size="33.3333320087857"> </rect>
+<rect id="Bar4_pbBarTagRectEl" x="616" y="736" width="35" height="2" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857"> </rect>
+</g>
+<g id="Value7" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:DisplayPointName="9" ns0:DisplayTimeStamp="9" ns0:HorzAlign="0" ns0:ShowUOM="True" ns0:IsMultiState="False" ns0:NumberFormat="0.00" ns0:CanonicalNumberFormat="0.00" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\wptp.lb603109b.value" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi71 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7126\WPTP.LB603109B.VALUE" ns0:PtTagStatus="0" ns0:PtTagTime="6/24/2011 1:16:33 PM" ns0:PtTagValue="100.00 FEET" ns0:Type="7" ns0:Visible="True">
+<rect id="Value7_pbTextBoundingRectEl" x="370" y="635" width="273" height="50" fill="#00FFFF" stroke-width="0"> </rect>
+<text id="Value7_pbTextEl" x="506" y="672" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="middle" ns2:Property="value">100.00 FEET</text>
+</g>
+<g id="Text32" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text32_pbTextBoundingRectEl" x="370" y="683" width="238" height="50" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text32_pbTextEl" x="370" y="720.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">Trunk Level</text>
+</g>
+<g id="Bar6" fill="#808080" stroke="none" font-family="Arial" font-size="33.3333320087857" ns0:IsMultiState="False" ns0:LineStyle="0" ns0:Lower="108.580001831055" ns0:Orientation="0" ns0:ShowScales="False" ns0:DisplayScaleInside="True" ns0:CanonicalNumberFormat="General" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\wptp600lb603109a" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi67 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7125\WPTP600LB603109A" ns0:PtTagStatus="" ns0:PtTagTime="" ns0:PtTagValue="111.427658081055" ns0:Start="108.580001831055" ns0:Type="12" ns0:Upper="122.080001831055" ns0:Visible="True">
+<rect id="Bar6_pbBarBoundingRectEl" x="894" y="66" width="35" height="222" fill="#00FFFF" stroke="#808080" stroke-width="2px" font-family="Arial" font-size="33.3333320087857"> </rect>
+<rect id="Bar6_pbBarTagRectEl" x="894" y="241" width="35" height="47" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857"> </rect>
+</g>
+<g id="Value9" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:DisplayPointName="9" ns0:DisplayTimeStamp="9" ns0:HorzAlign="0" ns0:ShowUOM="True" ns0:IsMultiState="False" ns0:NumberFormat="0.00" ns0:CanonicalNumberFormat="0.00" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\wptp600lb603109a" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi67 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7125\WPTP600LB603109A" ns0:PtTagStatus="0" ns0:PtTagTime="6/13/2013 4:07:02 PM" ns0:PtTagValue="111.43 FEET" ns0:Type="7" ns0:Visible="True">
+<rect id="Value9_pbTextBoundingRectEl" x="608" y="48" width="273" height="50" fill="#00FFFF" stroke-width="0"> </rect>
+<text id="Value9_pbTextEl" x="744" y="86" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="middle" ns2:Property="value">111.43 FEET</text>
+</g>
+<g id="Text33" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text33_pbTextBoundingRectEl" x="632" y="106" width="249" height="50" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text33_pbTextEl" x="632" y="143.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">Aftbay Level</text>
+</g>
+<g id="Genericarrowdiagonal_2" ns0:FillColor="16711680" transform="translate(259,80)" ns0:FillStyle="3" ns0:BackgroundColor="-1" ns0:IsMultiState="False" ns0:Type="16" ns0:Visible="True" ns0:TBHandle="33008" ns0:Rotation="0" ns0:Flip="0">
+<rect id="Genericarrowdiagonal_2_pbBoundingRectEl" x="259" y="80" width="90" height="76" fill="none" stroke-width="0"> </rect>
+<svg height="76" viewBox="0 0 999 993" width="90" preserveAspectRatio="none">
+<path style="fill:#00f;stroke:#000;stroke-width:2" d="M706,102 l-706,-102 105,706 109,-108 -51,-345 738,740 98,-98 -740,-738 345,51 102,-106z"> </path>
+</svg>
+</g>
+<g id="Genericarrowdiagonal_4" ns0:FillColor="16711680" transform="translate(1233,95)" ns0:FillStyle="3" ns0:BackgroundColor="-1" ns0:IsMultiState="False" ns0:Type="16" ns0:Visible="True" ns0:TBHandle="33008" ns0:Rotation="0" ns0:Flip="3">
+<rect id="Genericarrowdiagonal_4_pbBoundingRectEl" x="1233" y="95" width="148" height="64" fill="none" stroke-width="0"> </rect>
+<svg height="64" viewBox="0 0 999 993" width="148" preserveAspectRatio="none">
+<path style="fill:#00f;stroke:#000;stroke-width:2" d="M706,890 l-706,103 105,-707 109,108 -51,345 738,-739 98,97 -740,738 345,-51 102,106z"> </path>
+</svg>
+</g>
+<g id="Genericarrowdiagonal_6" ns0:FillColor="16711680" transform="translate(1365,1059)" ns0:FillStyle="3" ns0:BackgroundColor="-1" ns0:IsMultiState="False" ns0:Type="16" ns0:Visible="True" ns0:TBHandle="33008" ns0:Rotation="0" ns0:Flip="0">
+<rect id="Genericarrowdiagonal_6_pbBoundingRectEl" x="1365" y="1059" width="98" height="50" fill="none" stroke-width="0"> </rect>
+<svg height="50" viewBox="0 0 999 993" width="98" preserveAspectRatio="none">
+<path style="fill:#00f;stroke:#000;stroke-width:2" d="M706,102 l-706,-102 105,706 109,-108 -51,-345 738,740 98,-98 -740,-738 345,51 102,-106z"> </path>
+</svg>
+</g>
+<g id="Genericarrowdiagonal_7" ns0:FillColor="16711680" transform="translate(699,1021)" ns0:FillStyle="3" ns0:BackgroundColor="-1" ns0:IsMultiState="False" ns0:Type="16" ns0:Visible="True" ns0:TBHandle="33008" ns0:Rotation="0" ns0:Flip="0">
+<rect id="Genericarrowdiagonal_7_pbBoundingRectEl" x="699" y="1021" width="32" height="130" fill="none" stroke-width="0"> </rect>
+<svg height="130" viewBox="0 0 999 993" width="32" preserveAspectRatio="none">
+<path style="fill:#00f;stroke:#000;stroke-width:2" d="M706,102 l-706,-102 105,706 109,-108 -51,-345 738,740 98,-98 -740,-738 345,51 102,-106z"> </path>
+</svg>
+</g>
+<g id="Text36" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text36_pbTextBoundingRectEl" x="876" y="828" width="69" height="50" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text36_pbTextEl" x="876" y="865.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">72"</text>
+</g>
+<g id="Text37" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text37_pbTextBoundingRectEl" x="677" y="908" width="69" height="50" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text37_pbTextEl" x="677" y="945.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">30"</text>
+</g>
+<g id="Text38" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text38_pbTextBoundingRectEl" x="664" y="641" width="69" height="50" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text38_pbTextEl" x="664" y="678.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">78"</text>
+</g>
+<g id="Text43" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text43_pbTextBoundingRectEl" x="349" y="170" width="93" height="50" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text43_pbTextEl" x="349" y="207.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">138"</text>
+</g>
+<g id="Text34" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text34_pbTextBoundingRectEl" x="1275" y="50" width="381" height="64" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text34_pbTextEl" x="1275" y="98" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold">From Fremont</text>
+</g>
+<g id="Text35" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text35_pbTextBoundingRectEl" x="1344" y="114" width="188" height="64" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text35_pbTextEl" x="1344" y="162" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold">Siphon</text>
+</g>
+<g id="Text23" fill="#000000" stroke="none" font-family="Arial" font-size="59.9999976158143" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text23_pbTextBoundingRectEl" x="1447" y="593" width="331" height="77" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text23_pbTextEl" x="1447" y="650.75" fill="#000000" stroke="none" font-family="Arial" font-size="59.9999976158143" font-weight="bold">Ship Canal</text>
+</g>
+<g id="Text44" fill="#000000" stroke="none" font-family="Arial" font-size="46.6666648123" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text44_pbTextBoundingRectEl" x="1307" y="908" width="339" height="58" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text44_pbTextEl" x="1307" y="951.5" fill="#000000" stroke="none" font-family="Arial" font-size="46.6666648123" font-weight="bold">Central Trunk</text>
+</g>
+<g id="Text29" fill="#008000" stroke="none" font-family="Arial" font-size="79.9999968210857" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text29_pbTextBoundingRectEl" x="137" y="762" width="362" height="98" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text29_pbTextEl" x="137" y="835.5" fill="#008000" stroke="none" font-family="Arial" font-size="79.9999968210857" font-weight="bold">3RD AVE</text>
+</g>
+<g id="Text26" fill="#008000" stroke="none" font-family="Arial" font-size="79.9999968210857" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text26_pbTextBoundingRectEl" x="63" y="942" width="511" height="98" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text26_pbTextEl" x="63" y="1015.5" fill="#008000" stroke="none" font-family="Arial" font-size="79.9999968210857" font-weight="bold">STRUCTURE</text>
+</g>
+<g id="Text1" fill="#008000" stroke="none" font-family="Arial" font-size="79.9999968210857" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text1_pbTextBoundingRectEl" x="76" y="849" width="484" height="98" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text1_pbTextEl" x="76" y="922.5" fill="#008000" stroke="none" font-family="Arial" font-size="79.9999968210857" font-weight="bold">OVERFLOW</text>
+</g>
+<g id="Text2" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text2_pbTextBoundingRectEl" x="101" y="16" width="249" height="64" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text2_pbTextEl" x="101" y="64" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold">To WPTP</text>
+</g>
+<g id="Text3" fill="#000000" stroke="none" font-family="Arial" font-size="46.6666648123" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text3_pbTextBoundingRectEl" x="29" y="217" width="418" height="58" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text3_pbTextEl" x="29" y="260.5" fill="#000000" stroke="none" font-family="Arial" font-size="46.6666648123" font-weight="bold">North Interceptor</text>
+</g>
+<g id="Value1" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:DisplayPointName="9" ns0:DisplayTimeStamp="9" ns0:HorzAlign="0" ns0:ShowUOM="True" ns0:IsMultiState="False" ns0:NumberFormat="0.00" ns0:CanonicalNumberFormat="0.00" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\wptp.lb603109.value" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi70 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7124\WPTP.LB603109.VALUE" ns0:PtTagStatus="0" ns0:PtTagTime="6/24/2011 12:59:59 PM" ns0:PtTagValue="0.00 FEET" ns0:Type="7" ns0:Visible="True">
+<rect id="Value1_pbTextBoundingRectEl" x="378" y="582" width="225" height="50" fill="#00FFFF" stroke-width="0"> </rect>
+<text id="Value1_pbTextEl" x="490" y="620" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="middle" ns2:Property="value">116.9 FEET</text>
+</g>
+<g id="Value2" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:DisplayPointName="9" ns0:DisplayTimeStamp="9" ns0:HorzAlign="0" ns0:ShowUOM="True" ns0:IsMultiState="False" ns0:NumberFormat="0.00" ns0:CanonicalNumberFormat="0.00" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\wptp600lb603104a" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi67 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7119\WPTP600LB603104A" ns0:PtTagStatus="0" ns0:PtTagTime="6/13/2013 3:58:50 PM" ns0:PtTagValue="116.90 FEET" ns0:Type="7" ns0:Visible="True">
+<rect id="Value2_pbTextBoundingRectEl" x="1008" y="291" width="273" height="50" fill="#00FFFF" stroke-width="0"> </rect>
+<text id="Value2_pbTextEl" x="1144" y="328" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="middle" ns2:Property="value">0.0 mgd</text>
+</g>
+<g id="Text4" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text4_pbTextBoundingRectEl" x="1010" y="238" width="272" height="50" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text4_pbTextEl" x="1010" y="275.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">Level on Weir</text>
+</g>
+<g id="Bar1" fill="#808080" stroke="none" font-family="Arial" font-size="33.3333320087857" ns0:IsMultiState="False" ns0:LineStyle="0" ns0:Lower="116.900001525879" ns0:Orientation="0" ns0:ShowScales="False" ns0:DisplayScaleInside="True" ns0:CanonicalNumberFormat="General" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\wptp600lb603104a" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi67 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7119\WPTP600LB603104A" ns0:PtTagStatus="" ns0:PtTagTime="" ns0:PtTagValue="116.900001525879" ns0:Start="116.900001525879" ns0:Type="12" ns0:Upper="121.900001525879" ns0:Visible="True">
+<rect id="Bar1_pbBarBoundingRectEl" x="973" y="302" width="35" height="135" fill="#00FFFF" stroke="#808080" stroke-width="2px" font-family="Arial" font-size="33.3333320087857"> </rect>
+<rect id="Bar1_pbBarTagRectEl" x="973" y="435" width="35" height="2" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857"> </rect>
+</g>
+<g id="Genericarrow_1" ns0:FillColor="0" transform="translate(1175,413)" ns0:FillStyle="3" ns0:BackgroundColor="-1" ns0:IsMultiState="True" ns0:Type="16" ns0:Visible="True" ns0:TBHandle="11311" ns0:Rotation="0" ns0:Flip="2">
+<rect id="Genericarrow_1_pbBoundingRectEl" x="1175" y="413" width="76" height="50" fill="none" stroke-width="0"> </rect>
+<svg height="50" viewBox="0 0 992 592" width="76" preserveAspectRatio="none">
+<path style="fill:#00FF00;stroke:#000;stroke-width:2" d="M992,297 l-412,295 0,-125 156,-111 -736,0 0,-59 0,-60 736,0 -156,-112 0,-125 412,297z" ns0:OriginalStyle="fill:#000;stroke:#000;stroke-width:2"> </path>
+</svg>
+<ns0:MultiState id="Genericarrow_1_MS" BlinkBadData="0" ColorBadData="none" CurrentState="0" ns2:PtTagName="\\wtdhistpi\3rd.csostatus" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi64 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?8120\3RD.CSOSTATUS" TagName="3RD.CSOSTATUS" PtTagValue="0" ServerName="wtdhistpi" StateCount="2">
+<ns0:MSState id="Genericarrow_1_MSS1" Blink="0" Color="#00FF00" LowerValue="0" UpperValue="0" />
+<ns0:MSState id="Genericarrow_1_MSS2" Blink="0" Color="#FF0000" LowerValue="1" UpperValue="1" />
+</ns0:MultiState>
+</g>
+<g id="Value3" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:DisplayPointName="9" ns0:DisplayTimeStamp="9" ns0:HorzAlign="0" ns0:ShowUOM="True" ns0:IsMultiState="False" ns0:NumberFormat="0.00" ns0:CanonicalNumberFormat="0.00" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\3rd.overflow" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi63 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?8560\3RD.OVERFLOW" ns0:PtTagStatus="0" ns0:PtTagTime="6/13/2013 4:06:25 PM" ns0:PtTagValue="0.00 mgd" ns0:Type="7" ns0:Visible="True">
+<rect id="Value3_pbTextBoundingRectEl" x="1188" y="455" width="194" height="50" fill="#00FFFF" stroke-width="0"> </rect>
+<text id="Value3_pbTextEl" x="1285" y="492" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="middle" ns2:Property="value">100.0 FEET</text>
+</g>
+<g id="Bar3" fill="#808080" stroke="none" font-family="Arial" font-size="33.3333320087857" ns0:IsMultiState="False" ns0:LineStyle="0" ns0:Lower="113.389999389648" ns0:Orientation="0" ns0:ShowScales="False" ns0:DisplayScaleInside="True" ns0:CanonicalNumberFormat="General" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\wptp600lb603108a" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi67 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7122\WPTP600LB603108A" ns0:PtTagStatus="" ns0:PtTagTime="" ns0:PtTagValue="113.488594055176" ns0:Start="113.389999389648" ns0:Type="12" ns0:Upper="117.889999389648" ns0:Visible="True">
+<rect id="Bar3_pbBarBoundingRectEl" x="809" y="460" width="35" height="135" fill="#00FFFF" stroke="#808080" stroke-width="2px" font-family="Arial" font-size="33.3333320087857"> </rect>
+<rect id="Bar3_pbBarTagRectEl" x="809" y="592" width="35" height="3" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857"> </rect>
+</g>
+<g id="Value5" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:DisplayPointName="9" ns0:DisplayTimeStamp="9" ns0:HorzAlign="0" ns0:ShowUOM="True" ns0:IsMultiState="False" ns0:NumberFormat="0.00" ns0:CanonicalNumberFormat="0.00" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\wptp600lb603108a" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi67 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7122\WPTP600LB603108A" ns0:PtTagStatus="0" ns0:PtTagTime="6/13/2013 4:07:11 PM" ns0:PtTagValue="113.49 FEET" ns0:Type="7" ns0:Visible="True">
+<rect id="Value5_pbTextBoundingRectEl" x="614" y="402" width="273" height="50" fill="#00FFFF" stroke-width="0"> </rect>
+<text id="Value5_pbTextEl" x="750" y="440" fill="#0000FF" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="middle" ns2:Property="value">113.49 FEET</text>
+</g>
+<g id="Text5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
+<rect id="Text5_pbTextBoundingRectEl" x="622" y="352" width="233" height="50" fill="#FFFFFF" stroke-width="0"> </rect>
+<text id="Text5_pbTextEl" x="622" y="389.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">Weir Upstm</text>
+</g>
+<script language="JavaScript" type="text/javascript">
+function SVG_doc_loaded(evt) {
+    var parentDoc = evt.getTarget().getOwnerDocument();
+    var elem = parentDoc.createElement("Ready");
+    evt.getTarget().appendChild(elem);
+    fetchDataAndUpdate();
+}
+
+function fetchDataAndUpdate() {
+    var apiUrls = {
+        Value1: "https://wtdhistpi/piwebapi/streams/F1DPSy3FGFJlZ0GClg5W7vJPxgyBsAAAV1RESElTVFBJXFdQVFA2MDBMQjYwMDExMQ/value",
+        Value3: "https://wtdhistpi/piwebapi/streams/F1DPSy3FGFJlZ0GClg5W7vJPxgcCEAAAV1RESElTVFBJXDNSRC5PVkVSRkxPVw/value"
+    };
+
+    for (let key in apiUrls) {
+        fetch(apiUrls[key])
+            .then(response =&gt; response.json())
+            .then(data =&gt; {
+                var value = data.Value;  // Assuming the API returns a JSON object with a 'Value' property
+                var textElement = document.getElementById(key + "_pbTextEl");
+                if (textElement) {
+                    textElement.textContent = value + " FEET";  // Update the text content
+                } else {
+                    console.log(`Element with ID '${key}_pbTextEl' not found.`);
+                }
+            })
+            .catch(error =&gt; console.error("Error fetching data:", error));
+    }
+}
+</script>
+</svg>
