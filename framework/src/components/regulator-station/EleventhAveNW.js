@@ -16,7 +16,7 @@ const EleventhAveNW = () => {
     axios.get('http://localhost:5000/test')
       .then(response => {
         if (response.data.status === 'Flask server is running') {
-          axios.get('http://localhost:5000/schematic', { responseType: 'text' })
+          axios.get('http://localhost:5000/schematic/11thAve', { responseType: 'text' })
             .then(svgResponse => {
               setSchematicSvg(svgResponse.data);
             })
@@ -29,18 +29,6 @@ const EleventhAveNW = () => {
         console.error("There was an error connecting to the Flask server!", error);
       });
   }, []);
-
-  useEffect(() => {
-    if (selectedValue) {
-      axios.get(`http://localhost:5000/singlepoint_trend?value=${selectedValue}`)
-        .then(response => {
-          setSinglepointPlotData(response.data);
-        })
-        .catch(error => {
-          console.error("There was an error fetching single point plot data!", error);
-        });
-    }
-  }, [selectedValue]);
 
   const handleSinglepointPlotDataChange = (newPlotData) => {
     setSinglepointPlotData(newPlotData);
@@ -58,7 +46,7 @@ const EleventhAveNW = () => {
   return (
     <div className="container-fluid">
       <div className="row">
-      <div className="col-md-12">
+        <div className="col-md-12">
           <Link to="/" className="btn btn-primary mt-3">Home</Link>
         </div>
         <div className="col-md-9 main-content">
@@ -70,6 +58,7 @@ const EleventhAveNW = () => {
                     onSinglePlotDataChange={handleSinglepointPlotDataChange}
                     onMultiPlotDataChange={handleMultipointPlotDataChange}
                     selectedValue={selectedValue}
+                    station="11thAve" // Pass the station name dynamically here
                   />
                 </div>
               </div>

@@ -4,7 +4,8 @@ import Plot from 'react-plotly.js';
 const MultiPointTrend = ({ plotData }) => {
   return (
     <div className='content'>
-      {plotData.data.length > 0 ? (
+      {/* Add a check to ensure plotData.data is defined */}
+      {plotData?.data && plotData.data.length > 0 ? (
         <Plot data={plotData.data} layout={plotData.layout} />
       ) : (
         <p>Loading plot data...</p>

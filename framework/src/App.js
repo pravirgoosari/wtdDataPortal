@@ -13,7 +13,7 @@ function Home() {
     <div className="container text-center">
       <h1>WTD INTRANET SITE</h1>
       <h2>Real Time Data Pages</h2>
-
+      
       <div className="main-content">
         <h2>WTD INTRANET SITE FOR REAL TIME AND HISTORICAL DATA</h2>
         <h3>Real Time Data Pages</h3>
