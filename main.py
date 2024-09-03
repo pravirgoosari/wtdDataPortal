@@ -17,7 +17,7 @@ def index():
 def get_multipoint_trend():
     try:
         data = request.json
-        station = data.get('station')  # Get the station from the request
+        station = data.get('station')
         startDateTime_inp = data.get('startDateTime')
         endDateTime_inp = data.get('endDateTime')
         interval_inp = data.get('interval')
@@ -29,20 +29,36 @@ def get_multipoint_trend():
         end_time = handle_user_input(endDateTime_inp)
         interval = interval_inp
 
-        # Handle for 11th Ave
+        df_combined = None
+
         if station == "11thAve":
             tagname2 = os.getenv('Ave11thNwOF')
             tagname3 = os.getenv('Ave11thWeirLevel')
-        
-        # Handle for 3rd Ave
+            data_1 = retrieve_interpolated_to_frame(tagname2, pi_server, start_time, end_time, interval)
+            data_2 = retrieve_interpolated_to_frame(tagname3, pi_server, start_time, end_time, interval)
+            df_combined = merge_df_on_DateTime(data_1, data_2)
+
         elif station == "3rdAve":
-            tagname2 = os.getenv('ThirdAveWeirUpstm')
-            tagname3 = os.getenv('ThirdAveOverflow')
+            tags = ['ThirdAveWeirLevel', 'ThirdAveOverflow', 'ThirdAveTrunkLevel',
+                    'ThirdAveAftbay', 'ThirdAveWeirUpstm', 'ThirdAveSiphon']
+            data_frames = []
+            for tag in tags:
+                tagname = os.getenv(tag)
+                if not tagname:
+                    print(f"Tag name missing for: {tag}")
+                    continue
+                data = retrieve_interpolated_to_frame(tagname, pi_server, start_time, end_time, interval)
+                if data is not None:
+                    data_frames.append(data)
 
-        data_1 = retrieve_interpolated_to_frame(tagname2, pi_server, start_time, end_time, interval)
-        data_2 = retrieve_interpolated_to_frame(tagname3, pi_server, start_time, end_time, interval)
+            if data_frames:
+                df_combined = data_frames[0]
+                for df in data_frames[1:]:
+                    df_combined = merge_df_on_DateTime(df_combined, df)
 
-        df_combined = merge_df_on_DateTime(data_1, data_2)
+        if df_combined is None or df_combined.empty:
+            raise ValueError("No data available to plot.")
+
         plot_data = multipleTrend(df_combined)
         print(f"Serving multipoint trend for {station}")
         return plot_data
@@ -54,8 +70,7 @@ def get_multipoint_trend():
 def get_singlepoint_trend():
     try:
         data = request.json
-        station = data.get('station')  # Get the station from the request
-        print('Received POST data:', data)
+        station = data.get('station')
         startDateTime_inp = data.get('startDateTime')
         endDateTime_inp = data.get('endDateTime')
         interval_inp = data.get('interval')
@@ -72,25 +87,23 @@ def get_singlepoint_trend():
                 tagname = os.getenv('Ave11thNwOF')
 
         elif station == "3rdAve":
-            # Mapping the selected values to tag names for Third Avenue
-            if selected_value == 'Level on Weir':
-                tagname = os.getenv('ThirdAveWeirLevel')
-            elif selected_value == 'Overflow':
-                tagname = os.getenv('ThirdAveOverflow')
-            elif selected_value == 'Trunk Level':
-                tagname = os.getenv('ThirdAveTrunkLevel')
-            elif selected_value == 'Aftbay Level':
-                tagname = os.getenv('ThirdAveAftbayLevel')
-            elif selected_value == 'Weir Upstm':
-                tagname = os.getenv('ThirdAveWeirUpstm')
-            elif selected_value == 'Overflow mgd':
-                tagname = os.getenv('ThirdAveOverflowMgd')
+            tag_map = {
+                'Level on Weir': 'ThirdAveWeirLevel',
+                'Overflow': 'ThirdAveOverflow',
+                'Trunk Level': 'ThirdAveTrunkLevel',
+                'Aftbay Level': 'ThirdAveAftbay',
+                'Weir Upstm': 'ThirdAveWeirUpstm',
+                'Overflow mgd': 'ThirdAveSiphon'
+            }
+            tagname = os.getenv(tag_map.get(selected_value, ''))
+
+        if not tagname:
+            raise ValueError(f"Tag name not found for type: {selected_value}")
 
         start_time = handle_user_input(startDateTime_inp)
         end_time = handle_user_input(endDateTime_inp)
         interval = interval_inp
 
-        print(start_time, ":", end_time, ":", interval)
         data_singleplot = retrieve_interpolated_to_frame(tagname, pi_server, start_time, end_time, interval)
         plot_data = singleTrend(data_singleplot)
 
@@ -128,18 +141,27 @@ def get_schematic(station):
                 ('Ave11thNwOF', 'Value2_pbTextEl', 'mgd')
             ]
         elif station == '3rdAve':
+            # Correct IDs and units
             tags_and_ids = [
-                ('ThirdAveWeirLevel', 'Value1_pbTextEl', 'FEET'),
-                ('ThirdAveOverflow', 'Value2_pbTextEl', 'mgd'),
-                ('ThirdAveTrunkLevel', 'Value3_pbTextEl', 'FEET'),
-                ('ThirdAveAftbayLevel', 'Value7_pbTextEl', 'FEET'),
-                ('ThirdAveWeirUpstm', 'Value9_pbTextEl', 'FEET'),
-                ('ThirdAveOverflowMgd', 'Value5_pbTextEl', 'mgd')
+                ('ThirdAveWeirLevel', 'WeirLevel_pbTextEl', 'FEET'),   # Level on Weir
+                ('ThirdAveOverflow', 'OverflowMgd_pbTextEl', 'mgd'),   # Only MGD tag
+                ('ThirdAveTrunkLevel', 'TrunkLevel_pbTextEl', 'FEET'), # Trunk Level
+                ('ThirdAveAftbay', 'AftbayLevel_pbTextEl', 'FEET'), # Aftbay Level
+                ('ThirdAveWeirUpstm', 'WeirUpstm_pbTextEl', 'FEET'),   # Weir Upstm
+                ('ThirdAveSiphon', 'OverflowLevel_pbTextEl', 'FEET') # Should be in FEET
             ]
 
         for tagname_env, svg_id, unit in tags_and_ids:
             tagname = os.getenv(tagname_env)
+            if not tagname:
+                print(f"Tag name missing for: {tagname_env}")
+                continue
+
             current_value = fetch_data_from_pi(pi_server, tagname)
+            if current_value is None:
+                print(f"Could not fetch data for {tagname_env}")
+                continue
+
             new_value = f"{round(current_value, 2)} {unit}"
             update_svg(schematic_path, svg_id, new_value)
 
