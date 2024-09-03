@@ -11,9 +11,6 @@ const ThirdAveEwingSt = () => {
   const [singlepointPlotData, setSinglepointPlotData] = useState({ data: [], layout: {} });
   const [schematicSvg, setSchematicSvg] = useState('');
   const [selectedValue, setSelectedValue] = useState('');
-  const [startDateTime, setStartDateTime] = useState('');
-  const [endDateTime, setEndDateTime] = useState('');
-  const [interval, setInterval] = useState('');
 
   useEffect(() => {
     axios.get('http://localhost:5000/test')
@@ -32,44 +29,6 @@ const ThirdAveEwingSt = () => {
         console.error("There was an error connecting to the Flask server!", error);
       });
   }, []);
-
-  useEffect(() => {
-    if (selectedValue && startDateTime && endDateTime) {
-      applyFilters();  // Call applyFilters when a value is selected and dates are provided
-    }
-  }, [selectedValue, startDateTime, endDateTime, interval]);
-
-  const applyFilters = async () => {
-    try {
-      // Ensure that startDateTime, endDateTime, and interval are provided from TrendTimeRange component
-      if (!startDateTime || !endDateTime) {
-        alert('Please fill in start DateTime/end DateTime fields.');
-        return;
-      }
-
-      const singlePointResponse = await axios.post('http://localhost:5000/singlepoint_trend', {
-        startDateTime,
-        endDateTime,
-        interval,
-        type: selectedValue,
-        station: '3rdAve' // Correctly specify the station
-      });
-
-      const multiPointResponse = await axios.post('http://localhost:5000/multipoint_trend', {
-        startDateTime,
-        endDateTime,
-        interval,
-        station: '3rdAve' // Correctly specify the station
-      });
-
-      setSinglepointPlotData(singlePointResponse.data);
-      setMultipointPlotData(multiPointResponse.data);
-
-    } catch (error) {
-      console.error('Error fetching trend data:', error);
-      alert('Error fetching trend data');
-    }
-  };
 
   const handleSinglepointPlotDataChange = (newPlotData) => {
     setSinglepointPlotData(newPlotData);
@@ -99,9 +58,7 @@ const ThirdAveEwingSt = () => {
                     onSinglePlotDataChange={handleSinglepointPlotDataChange}
                     onMultiPlotDataChange={handleMultipointPlotDataChange}
                     selectedValue={selectedValue}
-                    setStartDateTime={setStartDateTime}
-                    setEndDateTime={setEndDateTime}
-                    setInterval={setInterval}
+                    station="3rdAve" // Pass the station name dynamically here
                   />
                 </div>
               </div>
@@ -111,27 +68,27 @@ const ThirdAveEwingSt = () => {
                   <div dangerouslySetInnerHTML={{ __html: schematicSvg }} />
                   <svg width="100%" height="100%" viewBox="0 0 800 600" style={{ position: 'absolute', top: 0, left: 0 }}>
                     <g onClick={() => handleClick('Level on Weir')}>
-                      <rect x="50" y="50" width="100" height="50" fill="transparent" />
+                      <rect x="450" y="195" width="100" height="40" fill="transparent" />
                       <text x="500" y="220" textAnchor="middle" fill="black" fillOpacity="0" fontSize="20"></text>
                     </g>
                     <g onClick={() => handleClick('Overflow')}>
-                      <rect x="200" y="100" width="100" height="50" fill="transparent" />
+                      <rect x="180" y="322" width="100" height="20" fill="transparent" />
                       <text x="230" y="342" textAnchor="middle" fill="black" fillOpacity="0" fontSize="20"></text>
                     </g>
                     <g onClick={() => handleClick('Trunk Level')}>
-                      <rect x="350" y="150" width="100" height="50" fill="transparent" />
+                      <rect x="180" y="346" width="100" height="20" fill="transparent" />
                       <text x="230" y="362" textAnchor="middle" fill="black" fillOpacity="0" fontSize="20"></text>
                     </g>
                     <g onClick={() => handleClick('Aftbay Level')}>
-                      <rect x="500" y="200" width="100" height="50" fill="transparent" />
+                      <rect x="285" y="95" width="100" height="40" fill="transparent" />
                       <text x="335" y="123" textAnchor="middle" fill="black" fillOpacity="0" fontSize="20"></text>
                     </g>
                     <g onClick={() => handleClick('Weir Upstm')}>
-                      <rect x="650" y="250" width="100" height="50" fill="transparent" />
+                      <rect x="285" y="240" width="100" height="40" fill="transparent" />
                       <text x="335" y="270" textAnchor="middle" fill="black" fillOpacity="0" fontSize="20"></text>
                     </g>
                     <g onClick={() => handleClick('Overflow mgd')}>
-                      <rect x="100" y="300" width="100" height="50" fill="transparent" />
+                      <rect x="505" y="270" width="100" height="40" fill="transparent" />
                       <text x="560" y="290" textAnchor="middle" fill="black" fillOpacity="0" fontSize="20"></text>
                     </g>
                   </svg>
