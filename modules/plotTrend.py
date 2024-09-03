@@ -24,17 +24,26 @@ def singleTrend(df):
 
 
 def multipleTrend(df):
-    column_name1 = df.columns[1]
-    column_name2 = df.columns[2]
-    fig = px.line(df, y=[column_name1, column_name2], x='DateTime')
-    fig.data[0].line.color = 'green'
-    fig.data[1].line.color = 'blue'
+    # Exclude the first column assuming it is 'DateTime'
+    y_columns = df.columns[1:]  # Dynamically include all columns except 'DateTime'
+    
+    # Create a line plot with Plotly Express
+    fig = px.line(df, y=y_columns, x='DateTime')
+    
+    # Define a list of colors or use a colormap if you have many lines
+    colors = ['green', 'blue', 'red', 'purple', 'orange', 'cyan']  # Add more colors as needed
+    
+    # Set line colors based on the number of columns
+    for i, data in enumerate(fig.data):
+        data.line.color = colors[i % len(colors)]  # Cycle through colors if more lines than colors
+
     # Add title and remove legend title
     fig.update_layout(title='Multipoint Trend', legend_title_text='')
-    # fig1.show()
-    graohJSON = plotly.io.to_json(fig, pretty=True)
 
-    return graohJSON
+    # Convert the figure to JSON for front-end rendering
+    graphJSON = plotly.io.to_json(fig, pretty=True)
+
+    return graphJSON
 
 # Ensure all numpy arrays are converted to lists
 
