@@ -56,6 +56,25 @@ def get_multipoint_trend():
                 for df in data_frames[1:]:
                     df_combined = merge_df_on_DateTime(df_combined, df)
 
+        elif station == "8thAve":
+            tags = ['8thAveTrunkFlow', '8thAveTrunkLevel', '8thAveInterceptorFlow',
+                    '8thAveOutfallFlow', '8thAveTideLevel', '8thAveInterceptorLevel',
+                    '8thAveRegulatorGatePos', '8thAveOutfallGatePos']
+            data_frames = []
+            for tag in tags:
+                tagname = os.getenv(tag)
+                if not tagname:
+                    print(f"Tag name missing for: {tag}")
+                    continue
+                data = retrieve_interpolated_to_frame(tagname, pi_server, start_time, end_time, interval)
+                if data is not None:
+                    data_frames.append(data)
+
+            if data_frames:
+                df_combined = data_frames[0]
+                for df in data_frames[1:]:
+                    df_combined = merge_df_on_DateTime(df_combined, df)
+
         if df_combined is None or df_combined.empty:
             raise ValueError("No data available to plot.")
 
@@ -97,6 +116,19 @@ def get_singlepoint_trend():
             }
             tagname = os.getenv(tag_map.get(selected_value, ''))
 
+        elif station == "8thAve":
+            tag_map = {
+                'Trunk Flow': '8thAveTrunkFlow',
+                'Trunk Level': '8thAveTrunkLevel',
+                'Interceptor Flow': '8thAveInterceptorFlow',
+                'Outfall Flow': '8thAveOutfallFlow',
+                'Tide Level': '8thAveTideLevel',
+                'Interceptor Level': '8thAveInterceptorLevel',
+                'Regulator Gate Position': '8thAveRegulatorGatePos',
+                'Outfall Gate Position': '8thAveOutfallGatePos'
+            }
+            tagname = os.getenv(tag_map.get(selected_value, ''))
+
         if not tagname:
             raise ValueError(f"Tag name not found for type: {selected_value}")
 
@@ -122,7 +154,8 @@ def get_schematic(station):
         # Define the paths based on the station
         schematic_paths = {
             '11thAve': './modules/PI/webparts/CSOSites/11thAveNW',
-            '3rdAve': './modules/PI/webparts/CSOSites/3RDAVE'
+            '3rdAve': './modules/PI/webparts/CSOSites/3RDAVE',
+            '8thAve': './modules/PI/webparts/CSOSites/8thave'
         }
 
         schematic_path = schematic_paths.get(station)
@@ -141,15 +174,25 @@ def get_schematic(station):
                 ('Ave11thNwOF', 'Value2_pbTextEl', 'mgd')
             ]
         elif station == '3rdAve':
-            # Correct IDs and units
             tags_and_ids = [
-                ('ThirdAveWeirLevel', 'WeirLevel_pbTextEl', 'FEET'),   # Level on Weir
-                ('ThirdAveOverflow', 'OverflowMgd_pbTextEl', 'mgd'),   # Only MGD tag
-                ('ThirdAveTrunkLevel', 'TrunkLevel_pbTextEl', 'FEET'), # Trunk Level
-                ('ThirdAveAftbay', 'AftbayLevel_pbTextEl', 'FEET'), # Aftbay Level
-                ('ThirdAveWeirUpstm', 'WeirUpstm_pbTextEl', 'FEET'),   # Weir Upstm
-                ('ThirdAveSiphon', 'OverflowLevel_pbTextEl', 'FEET') # Should be in FEET
+                ('ThirdAveWeirLevel', 'WeirLevel_pbTextEl', 'FEET'),   
+                ('ThirdAveOverflow', 'OverflowMgd_pbTextEl', 'mgd'),   
+                ('ThirdAveTrunkLevel', 'TrunkLevel_pbTextEl', 'FEET'), 
+                ('ThirdAveAftbay', 'AftbayLevel_pbTextEl', 'FEET'), 
+                ('ThirdAveWeirUpstm', 'WeirUpstm_pbTextEl', 'FEET'),   
+                ('ThirdAveSiphon', 'OverflowLevel_pbTextEl', 'FEET') 
             ]
+        elif station == '8thAve':
+            tags_and_ids = [
+                ('8thAveTrunkFlow', 'Value4_pbTextEl', 'mgd'),   
+                ('8thAveTrunkLevel', 'Value1_pbTextEl', 'FEET'),   
+                ('8thAveInterceptorFlow', 'Value5_pbTextEl', 'mgd'), 
+                ('8thAveOutfallFlow', 'Value6_pbTextEl', 'mgd'), 
+                ('8thAveTideLevel', 'Value3_pbTextEl', 'FEET'),   
+                ('8thAveInterceptorLevel', 'Value2_pbTextEl', 'FEET'), 
+                ('8thAveRegulatorGatePos', 'Value7_pbTextEl', '%'), 
+                ('8thAveOutfallGatePos', 'Value8_pbTextEl', '%') 
+            ]    
 
         for tagname_env, svg_id, unit in tags_and_ids:
             tagname = os.getenv(tagname_env)

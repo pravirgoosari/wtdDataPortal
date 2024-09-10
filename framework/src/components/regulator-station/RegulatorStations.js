@@ -21,8 +21,8 @@ function RegulatorStations() {
           </thead>
           <tbody>
             <tr><td><Link to="/11th-ave-nw-of">11th Ave. NW O.F.</Link></td></tr>
-            <tr><td><Link to="/3rd-ave-ewing-st">3rd Ave and Ewing St.</Link></td></tr> {/* Link to the new page */}
-            <tr><td>8th Ave.</td></tr>
+            <tr><td><Link to="/3rd-ave-ewing-st">3rd Ave and Ewing St.</Link></td></tr>
+            <tr><td><Link to="/8th-ave">8th Ave.</Link></td></tr> {/* Link to the new page */}
             <tr><td>Ballard R.S.</td></tr>
             <tr><td>Brandon R.S.</td></tr>
             <tr><td>Canal St. OF Weir</td></tr>

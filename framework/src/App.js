@@ -7,6 +7,7 @@ import './App.css';
 import RegulatorStations from './components/regulator-station/RegulatorStations';
 import EleventhAveNW from './components/regulator-station/EleventhAveNW';
 import ThirdAveEwingSt from './components/regulator-station/ThirdAveEwingSt';
+import EighthAve from './components/regulator-station/EighthAve';
 
 function Home() {
   return (
@@ -83,6 +84,7 @@ function App() {
         {/* Below route will include the logic to fetch and display data */}
         <Route path="/11th-ave-nw-of" element={<EleventhAveNW />} />
         <Route path="/3rd-ave-ewing-st" element={<ThirdAveEwingSt />} />
+        <Route path="/8th-ave" element={<EighthAve />} />
       </Routes>
     </Router>
   );
