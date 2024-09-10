@@ -5,6 +5,7 @@ import SinglePointTrend from '../SinglePointTrend';
 import MultiPointTrend from '../MultiPointTrend';
 import TrendTimeRange from '../TrendTimeRange';
 import '../../App.css';
+import parse from 'html-react-parser';
 
 const EleventhAveNW = () => {
   const [multipointPlotData, setMultipointPlotData] = useState({ data: [], layout: {} });
@@ -43,6 +44,40 @@ const EleventhAveNW = () => {
     setSelectedValue(sectionName.trim());
   };
 
+  // Function to add click handlers to specific elements in the parsed SVG
+  const addClickHandlersToSVG = (svgString) => {
+    // Parse the SVG string into JSX elements
+    return parse(svgString, {
+      replace: (domNode) => {
+        if (domNode.name === 'text') {
+          // Add click handler based on specific IDs
+          if (domNode.attribs && domNode.attribs.id === 'Value1_pbTextEl') {
+            return (
+              <text
+                {...domNode.attribs}
+                onClick={() => handleClick('FEET')}
+                style={{ cursor: 'pointer', fill: '#0000FF' }}
+              >
+                {domNode.children[0].data}
+              </text>
+            );
+          }
+          if (domNode.attribs && domNode.attribs.id === 'Value2_pbTextEl') {
+            return (
+              <text
+                {...domNode.attribs}
+                onClick={() => handleClick('mgd')}
+                style={{ cursor: 'pointer', fill: '#0000FF' }}
+              >
+                {domNode.children[0].data}
+              </text>
+            );
+          }
+        }
+      },
+    });
+  };
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -58,24 +93,14 @@ const EleventhAveNW = () => {
                     onSinglePlotDataChange={handleSinglepointPlotDataChange}
                     onMultiPlotDataChange={handleMultipointPlotDataChange}
                     selectedValue={selectedValue}
-                    station="11thAve" // Pass the station name dynamically here
+                    station="11thAve"
                   />
                 </div>
               </div>
               <div className="card">
                 <div className="card-body">
                   <h2>Schematic</h2>
-                  <div dangerouslySetInnerHTML={{ __html: schematicSvg }} />
-                  <svg width="100%" height="100%" viewBox="0 0 800 600" style={{ position: 'absolute', top: 0, left: 0 }}>
-                    <g onClick={() => handleClick('FEET')}>
-                      <rect x="450" y="257" width="100" height="50" fill="transparent" />
-                      <text x="500" y="282" textAnchor="middle" fill="black" fillOpacity="0" fontSize="40"></text>
-                    </g>
-                    <g onClick={() => handleClick('mgd')}>
-                      <rect x="300" y="550" width="100" height="50" fill="transparent" />
-                      <text x="350" y="575" textAnchor="middle" fill="black" fillOpacity="0" fontSize="40"></text>
-                    </g>
-                  </svg>
+                  {schematicSvg && addClickHandlersToSVG(schematicSvg)}
                 </div>
               </div>
             </div>

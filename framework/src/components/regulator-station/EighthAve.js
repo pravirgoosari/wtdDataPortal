@@ -7,7 +7,7 @@ import TrendTimeRange from '../TrendTimeRange';
 import '../../App.css';
 import parse from 'html-react-parser';
 
-const ThirdAveEwingSt = () => {
+const EighthAve = () => {
   const [multipointPlotData, setMultipointPlotData] = useState({ data: [], layout: {} });
   const [singlepointPlotData, setSinglepointPlotData] = useState({ data: [], layout: {} });
   const [schematicSvg, setSchematicSvg] = useState('');
@@ -17,7 +17,7 @@ const ThirdAveEwingSt = () => {
     axios.get('http://localhost:5000/test')
       .then(response => {
         if (response.data.status === 'Flask server is running') {
-          axios.get('http://localhost:5000/schematic/3rdAve', { responseType: 'text' })
+          axios.get('http://localhost:5000/schematic/8thAve', { responseType: 'text' })
             .then(svgResponse => {
               setSchematicSvg(svgResponse.data);
             })
@@ -51,40 +51,18 @@ const ThirdAveEwingSt = () => {
       replace: (domNode) => {
         if (domNode.name === 'text') {
           // Add click handlers based on specific IDs
-          if (domNode.attribs && domNode.attribs.id === 'WeirLevel_pbTextEl') {
+          if (domNode.attribs && domNode.attribs.id === 'Value4_pbTextEl') {
             return (
               <text
                 {...domNode.attribs}
-                onClick={() => handleClick('Level on Weir')}
+                onClick={() => handleClick('Trunk Flow')}
                 style={{ cursor: 'pointer', fill: '#0000FF' }}
               >
                 {domNode.children[0].data}
               </text>
             );
           }
-          if (domNode.attribs && domNode.attribs.id === 'OverflowMgd_pbTextEl') {
-            return (
-              <text
-                {...domNode.attribs}
-                onClick={() => handleClick('Overflow mgd')}
-                style={{ cursor: 'pointer', fill: '#0000FF' }}
-              >
-                {domNode.children[0].data}
-              </text>
-            );
-          }
-          if (domNode.attribs && domNode.attribs.id === 'AftbayLevel_pbTextEl') {
-            return (
-              <text
-                {...domNode.attribs}
-                onClick={() => handleClick('Aftbay Level')}
-                style={{ cursor: 'pointer', fill: '#0000FF' }}
-              >
-                {domNode.children[0].data}
-              </text>
-            );
-          }
-          if (domNode.attribs && domNode.attribs.id === 'TrunkLevel_pbTextEl') {
+          if (domNode.attribs && domNode.attribs.id === 'Value1_pbTextEl') {
             return (
               <text
                 {...domNode.attribs}
@@ -95,22 +73,66 @@ const ThirdAveEwingSt = () => {
               </text>
             );
           }
-          if (domNode.attribs && domNode.attribs.id === 'WeirUpstm_pbTextEl') {
+          if (domNode.attribs && domNode.attribs.id === 'Value5_pbTextEl') {
             return (
               <text
                 {...domNode.attribs}
-                onClick={() => handleClick('Weir Upstm')}
+                onClick={() => handleClick('Interceptor Flow')}
                 style={{ cursor: 'pointer', fill: '#0000FF' }}
               >
                 {domNode.children[0].data}
               </text>
             );
           }
-          if (domNode.attribs && domNode.attribs.id === 'OverflowLevel_pbTextEl') {
+          if (domNode.attribs && domNode.attribs.id === 'Value6_pbTextEl') {
             return (
               <text
                 {...domNode.attribs}
-                onClick={() => handleClick('Overflow')}
+                onClick={() => handleClick('Outfall Flow')}
+                style={{ cursor: 'pointer', fill: '#0000FF' }}
+              >
+                {domNode.children[0].data}
+              </text>
+            );
+          }
+          if (domNode.attribs && domNode.attribs.id === 'Value3_pbTextEl') {
+            return (
+              <text
+                {...domNode.attribs}
+                onClick={() => handleClick('Tide Level')}
+                style={{ cursor: 'pointer', fill: '#0000FF' }}
+              >
+                {domNode.children[0].data}
+              </text>
+            );
+          }
+          if (domNode.attribs && domNode.attribs.id === 'Value2_pbTextEl') {
+            return (
+              <text
+                {...domNode.attribs}
+                onClick={() => handleClick('Interceptor Level')}
+                style={{ cursor: 'pointer', fill: '#0000FF' }}
+              >
+                {domNode.children[0].data}
+              </text>
+            );
+          }
+          if (domNode.attribs && domNode.attribs.id === 'Value7_pbTextEl') {
+            return (
+              <text
+                {...domNode.attribs}
+                onClick={() => handleClick('Regulator Gate Position')}
+                style={{ cursor: 'pointer', fill: '#0000FF' }}
+              >
+                {domNode.children[0].data}
+              </text>
+            );
+          }
+          if (domNode.attribs && domNode.attribs.id === 'Value8_pbTextEl') {
+            return (
+              <text
+                {...domNode.attribs}
+                onClick={() => handleClick('Outfall Gate Position')}
                 style={{ cursor: 'pointer', fill: '#0000FF' }}
               >
                 {domNode.children[0].data}
@@ -137,7 +159,7 @@ const ThirdAveEwingSt = () => {
                     onSinglePlotDataChange={handleSinglepointPlotDataChange}
                     onMultiPlotDataChange={handleMultipointPlotDataChange}
                     selectedValue={selectedValue}
-                    station="3rdAve"
+                    station="8thAve" // Pass the station name dynamically here
                   />
                 </div>
               </div>
@@ -169,4 +191,4 @@ const ThirdAveEwingSt = () => {
   );
 };
 
-export default ThirdAveEwingSt;
+export default EighthAve;

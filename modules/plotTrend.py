@@ -31,7 +31,7 @@ def multipleTrend(df):
     fig = px.line(df, y=y_columns, x='DateTime')
     
     # Define a list of colors or use a colormap if you have many lines
-    colors = ['green', 'blue', 'red', 'purple', 'orange', 'cyan']  # Add more colors as needed
+    colors = ['green', 'blue', 'red', 'purple', 'yellow', 'orange', 'cyan', 'black']  # Add more colors as needed
     
     # Set line colors based on the number of columns
     for i, data in enumerate(fig.data):
