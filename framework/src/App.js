@@ -1,13 +1,12 @@
+// App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';  // Make sure Link is imported here
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-// Updated import paths
 import RegulatorStations from './components/regulator-station/RegulatorStations';
-import EleventhAveNW from './components/regulator-station/EleventhAveNW';
-import ThirdAveEwingSt from './components/regulator-station/ThirdAveEwingSt';
-import EighthAve from './components/regulator-station/EighthAve';
+import Station from './components/regulator-station/Station';
+import stations from './components/config/stationsConfig';  // Import the stations configuration
 
 function Home() {
   return (
@@ -81,10 +80,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/regulator-stations" element={<RegulatorStations />} />
-        {/* Below route will include the logic to fetch and display data */}
-        <Route path="/11th-ave-nw-of" element={<EleventhAveNW />} />
-        <Route path="/3rd-ave-ewing-st" element={<ThirdAveEwingSt />} />
-        <Route path="/8th-ave" element={<EighthAve />} />
+        
+        {stations.map((station, index) => (
+          <Route
+            key={index}
+            path={station.path}
+            element={
+              <Station
+                stationName={station.stationName}
+                schematicEndpoint={station.schematicEndpoint}
+                clickHandlers={station.clickHandlers}
+              />
+            }
+          />
+        ))}
       </Routes>
     </Router>
   );

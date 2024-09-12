@@ -1,3 +1,4 @@
+// Station.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -7,7 +8,7 @@ import TrendTimeRange from '../TrendTimeRange';
 import '../../App.css';
 import parse from 'html-react-parser';
 
-const ThirdAveEwingSt = () => {
+const Station = ({ stationName, schematicEndpoint, clickHandlers }) => {
   const [multipointPlotData, setMultipointPlotData] = useState({ data: [], layout: {} });
   const [singlepointPlotData, setSinglepointPlotData] = useState({ data: [], layout: {} });
   const [schematicSvg, setSchematicSvg] = useState('');
@@ -17,7 +18,7 @@ const ThirdAveEwingSt = () => {
     axios.get('http://localhost:5000/test')
       .then(response => {
         if (response.data.status === 'Flask server is running') {
-          axios.get('http://localhost:5000/schematic/3rdAve', { responseType: 'text' })
+          axios.get(`http://localhost:5000/schematic/${schematicEndpoint}`, { responseType: 'text' })
             .then(svgResponse => {
               setSchematicSvg(svgResponse.data);
             })
@@ -29,7 +30,7 @@ const ThirdAveEwingSt = () => {
       .catch(error => {
         console.error("There was an error connecting to the Flask server!", error);
       });
-  }, []);
+  }, [schematicEndpoint]);
 
   const handleSinglepointPlotDataChange = (newPlotData) => {
     setSinglepointPlotData(newPlotData);
@@ -44,73 +45,16 @@ const ThirdAveEwingSt = () => {
     setSelectedValue(sectionName.trim());
   };
 
-  // Function to add click handlers to specific elements in the parsed SVG
   const addClickHandlersToSVG = (svgString) => {
-    // Parse the SVG string into JSX elements
     return parse(svgString, {
       replace: (domNode) => {
-        if (domNode.name === 'text') {
-          // Add click handlers based on specific IDs
-          if (domNode.attribs && domNode.attribs.id === 'WeirLevel_pbTextEl') {
+        if (domNode.name === 'text' && clickHandlers) {
+          const handler = clickHandlers[domNode.attribs.id];
+          if (handler) {
             return (
               <text
                 {...domNode.attribs}
-                onClick={() => handleClick('Level on Weir')}
-                style={{ cursor: 'pointer', fill: '#0000FF' }}
-              >
-                {domNode.children[0].data}
-              </text>
-            );
-          }
-          if (domNode.attribs && domNode.attribs.id === 'OverflowMgd_pbTextEl') {
-            return (
-              <text
-                {...domNode.attribs}
-                onClick={() => handleClick('Overflow mgd')}
-                style={{ cursor: 'pointer', fill: '#0000FF' }}
-              >
-                {domNode.children[0].data}
-              </text>
-            );
-          }
-          if (domNode.attribs && domNode.attribs.id === 'AftbayLevel_pbTextEl') {
-            return (
-              <text
-                {...domNode.attribs}
-                onClick={() => handleClick('Aftbay Level')}
-                style={{ cursor: 'pointer', fill: '#0000FF' }}
-              >
-                {domNode.children[0].data}
-              </text>
-            );
-          }
-          if (domNode.attribs && domNode.attribs.id === 'TrunkLevel_pbTextEl') {
-            return (
-              <text
-                {...domNode.attribs}
-                onClick={() => handleClick('Trunk Level')}
-                style={{ cursor: 'pointer', fill: '#0000FF' }}
-              >
-                {domNode.children[0].data}
-              </text>
-            );
-          }
-          if (domNode.attribs && domNode.attribs.id === 'WeirUpstm_pbTextEl') {
-            return (
-              <text
-                {...domNode.attribs}
-                onClick={() => handleClick('Weir Upstm')}
-                style={{ cursor: 'pointer', fill: '#0000FF' }}
-              >
-                {domNode.children[0].data}
-              </text>
-            );
-          }
-          if (domNode.attribs && domNode.attribs.id === 'OverflowLevel_pbTextEl') {
-            return (
-              <text
-                {...domNode.attribs}
-                onClick={() => handleClick('Overflow')}
+                onClick={() => handleClick(handler)}
                 style={{ cursor: 'pointer', fill: '#0000FF' }}
               >
                 {domNode.children[0].data}
@@ -137,7 +81,7 @@ const ThirdAveEwingSt = () => {
                     onSinglePlotDataChange={handleSinglepointPlotDataChange}
                     onMultiPlotDataChange={handleMultipointPlotDataChange}
                     selectedValue={selectedValue}
-                    station="3rdAve"
+                    station={stationName}
                   />
                 </div>
               </div>
@@ -169,4 +113,4 @@ const ThirdAveEwingSt = () => {
   );
 };
 
-export default ThirdAveEwingSt;
+export default Station;
