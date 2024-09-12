@@ -5,6 +5,7 @@ from modules.dataPull import *
 from modules.plotTrend import *
 from modules.dateTime import *
 from modules.image_display import *
+from modules.stationsConfig import get_station_config
 
 app = Flask(__name__)
 CORS(app)  # This will enable CORS for all routes
@@ -12,6 +13,10 @@ CORS(app)  # This will enable CORS for all routes
 @app.route('/')
 def index():
     return "Flask server is running!"
+
+def connect_to_pi_server():
+    server_name = os.getenv('SERVERNAME')
+    return connect_to_server(server_name)
 
 @app.route('/multipoint_trend', methods=['POST'])
 def get_multipoint_trend():
@@ -22,65 +27,38 @@ def get_multipoint_trend():
         endDateTime_inp = data.get('endDateTime')
         interval_inp = data.get('interval')
 
-        server_name = os.getenv('SERVERNAME')
-        pi_server = connect_to_server(server_name)
+        config = get_station_config(station)
+        if not config:
+            return jsonify({"error": "Invalid station provided"}), 400
 
+        pi_server = connect_to_pi_server()
         start_time = handle_user_input(startDateTime_inp)
         end_time = handle_user_input(endDateTime_inp)
         interval = interval_inp
 
-        df_combined = None
+        tags = config['multipoint_tags']
+        data_frames = []
 
-        if station == "11thAve":
-            tagname2 = os.getenv('Ave11thNwOF')
-            tagname3 = os.getenv('Ave11thWeirLevel')
-            data_1 = retrieve_interpolated_to_frame(tagname2, pi_server, start_time, end_time, interval)
-            data_2 = retrieve_interpolated_to_frame(tagname3, pi_server, start_time, end_time, interval)
-            df_combined = merge_df_on_DateTime(data_1, data_2)
+        for tag in tags:
+            tagname = os.getenv(tag)
+            if not tagname:
+                print(f"Tag name missing for: {tag}")
+                continue
+            data = retrieve_interpolated_to_frame(tagname, pi_server, start_time, end_time, interval)
+            if data is not None:
+                data_frames.append(data)
 
-        elif station == "3rdAve":
-            tags = ['ThirdAveWeirLevel', 'ThirdAveOverflow', 'ThirdAveTrunkLevel',
-                    'ThirdAveAftbay', 'ThirdAveWeirUpstm', 'ThirdAveSiphon']
-            data_frames = []
-            for tag in tags:
-                tagname = os.getenv(tag)
-                if not tagname:
-                    print(f"Tag name missing for: {tag}")
-                    continue
-                data = retrieve_interpolated_to_frame(tagname, pi_server, start_time, end_time, interval)
-                if data is not None:
-                    data_frames.append(data)
-
-            if data_frames:
-                df_combined = data_frames[0]
-                for df in data_frames[1:]:
-                    df_combined = merge_df_on_DateTime(df_combined, df)
-
-        elif station == "8thAve":
-            tags = ['8thAveTrunkFlow', '8thAveTrunkLevel', '8thAveInterceptorFlow',
-                    '8thAveOutfallFlow', '8thAveTideLevel', '8thAveInterceptorLevel',
-                    '8thAveRegulatorGatePos', '8thAveOutfallGatePos']
-            data_frames = []
-            for tag in tags:
-                tagname = os.getenv(tag)
-                if not tagname:
-                    print(f"Tag name missing for: {tag}")
-                    continue
-                data = retrieve_interpolated_to_frame(tagname, pi_server, start_time, end_time, interval)
-                if data is not None:
-                    data_frames.append(data)
-
-            if data_frames:
-                df_combined = data_frames[0]
-                for df in data_frames[1:]:
-                    df_combined = merge_df_on_DateTime(df_combined, df)
-
-        if df_combined is None or df_combined.empty:
+        if not data_frames:
             raise ValueError("No data available to plot.")
+
+        df_combined = data_frames[0]
+        for df in data_frames[1:]:
+            df_combined = merge_df_on_DateTime(df_combined, df)
 
         plot_data = multipleTrend(df_combined)
         print(f"Serving multipoint trend for {station}")
         return plot_data
+
     except Exception as e:
         print(f"Error serving multipoint trend: {e}")
         return jsonify({"error": str(e)})
@@ -95,55 +73,31 @@ def get_singlepoint_trend():
         interval_inp = data.get('interval')
         selected_value = data.get('type')
 
-        server_name = os.getenv('SERVERNAME')
-        pi_server = connect_to_server(server_name)
+        config = get_station_config(station)
+        if not config:
+            return jsonify({"error": "Invalid station provided"}), 400
 
-        tagname = ''
-        if station == "11thAve":
-            if selected_value == 'FEET':
-                tagname = os.getenv('Ave11thWeirLevel')
-            elif selected_value == 'mgd':
-                tagname = os.getenv('Ave11thNwOF')
-
-        elif station == "3rdAve":
-            tag_map = {
-                'Level on Weir': 'ThirdAveWeirLevel',
-                'Overflow': 'ThirdAveOverflow',
-                'Trunk Level': 'ThirdAveTrunkLevel',
-                'Aftbay Level': 'ThirdAveAftbay',
-                'Weir Upstm': 'ThirdAveWeirUpstm',
-                'Overflow mgd': 'ThirdAveSiphon'
-            }
-            tagname = os.getenv(tag_map.get(selected_value, ''))
-
-        elif station == "8thAve":
-            tag_map = {
-                'Trunk Flow': '8thAveTrunkFlow',
-                'Trunk Level': '8thAveTrunkLevel',
-                'Interceptor Flow': '8thAveInterceptorFlow',
-                'Outfall Flow': '8thAveOutfallFlow',
-                'Tide Level': '8thAveTideLevel',
-                'Interceptor Level': '8thAveInterceptorLevel',
-                'Regulator Gate Position': '8thAveRegulatorGatePos',
-                'Outfall Gate Position': '8thAveOutfallGatePos'
-            }
-            tagname = os.getenv(tag_map.get(selected_value, ''))
-
-        if not tagname:
-            raise ValueError(f"Tag name not found for type: {selected_value}")
-
+        pi_server = connect_to_pi_server()
         start_time = handle_user_input(startDateTime_inp)
         end_time = handle_user_input(endDateTime_inp)
         interval = interval_inp
+
+        tag_map = config['singlepoint_map']
+        tagname = os.getenv(tag_map.get(selected_value, ''))
+
+        if not tagname:
+            raise ValueError(f"Tag name not found for type: {selected_value}")
 
         data_singleplot = retrieve_interpolated_to_frame(tagname, pi_server, start_time, end_time, interval)
         plot_data = singleTrend(data_singleplot)
 
         print(f"Serving singlepoint trend data for {station}")
         return plot_data
+
     except Exception as e:
         print(f"Error serving singlepoint trend: {e}")
         return jsonify({"error": str(e)})
+
     finally:
         if pi_server:
             pi_server.Disconnect()
@@ -151,65 +105,31 @@ def get_singlepoint_trend():
 @app.route('/schematic/<station>')
 def get_schematic(station):
     try:
-        # Define the paths based on the station
-        schematic_paths = {
-            '11thAve': './modules/PI/webparts/CSOSites/11thAveNW',
-            '3rdAve': './modules/PI/webparts/CSOSites/3RDAVE',
-            '8thAve': './modules/PI/webparts/CSOSites/8thave'
-        }
-
-        schematic_path = schematic_paths.get(station)
-
-        if not schematic_path:
+        config = get_station_config(station)
+        if not config:
             return jsonify({"error": "Invalid station provided"}), 400
 
-        # Fetch data for tags
-        server_name = os.getenv('SERVERNAME')
-        pi_server = connect_to_server(server_name)
+        schematic_path = config['schematic_path']
+        pi_server = connect_to_pi_server()
+        
+        tags_and_ids = [(os.getenv(tag), svg_id, unit) 
+                        for tag, svg_id, unit in config.get('tags_and_ids', [])]
 
-        # Define tags and their corresponding IDs in the SVG for each station
-        if station == '11thAve':
-            tags_and_ids = [
-                ('Ave11thWeirLevel', 'Value1_pbTextEl', 'FEET'),
-                ('Ave11thNwOF', 'Value2_pbTextEl', 'mgd')
-            ]
-        elif station == '3rdAve':
-            tags_and_ids = [
-                ('ThirdAveWeirLevel', 'WeirLevel_pbTextEl', 'FEET'),   
-                ('ThirdAveOverflow', 'OverflowMgd_pbTextEl', 'mgd'),   
-                ('ThirdAveTrunkLevel', 'TrunkLevel_pbTextEl', 'FEET'), 
-                ('ThirdAveAftbay', 'AftbayLevel_pbTextEl', 'FEET'), 
-                ('ThirdAveWeirUpstm', 'WeirUpstm_pbTextEl', 'FEET'),   
-                ('ThirdAveSiphon', 'OverflowLevel_pbTextEl', 'FEET') 
-            ]
-        elif station == '8thAve':
-            tags_and_ids = [
-                ('8thAveTrunkFlow', 'Value4_pbTextEl', 'mgd'),   
-                ('8thAveTrunkLevel', 'Value1_pbTextEl', 'FEET'),   
-                ('8thAveInterceptorFlow', 'Value5_pbTextEl', 'mgd'), 
-                ('8thAveOutfallFlow', 'Value6_pbTextEl', 'mgd'), 
-                ('8thAveTideLevel', 'Value3_pbTextEl', 'FEET'),   
-                ('8thAveInterceptorLevel', 'Value2_pbTextEl', 'FEET'), 
-                ('8thAveRegulatorGatePos', 'Value7_pbTextEl', '%'), 
-                ('8thAveOutfallGatePos', 'Value8_pbTextEl', '%') 
-            ]    
-
-        for tagname_env, svg_id, unit in tags_and_ids:
-            tagname = os.getenv(tagname_env)
+        for tagname, svg_id, unit in tags_and_ids:
             if not tagname:
-                print(f"Tag name missing for: {tagname_env}")
+                print(f"Tag name missing for: {tagname}")
                 continue
 
             current_value = fetch_data_from_pi(pi_server, tagname)
             if current_value is None:
-                print(f"Could not fetch data for {tagname_env}")
+                print(f"Could not fetch data for {tagname}")
                 continue
 
             new_value = f"{round(current_value, 2)} {unit}"
             update_svg(schematic_path, svg_id, new_value)
 
         print(f"Serving schematic from {schematic_path}.svg")
-        return send_file(f"{schematic_path}.svg", mimetype='image/svg+xml')  # Serve the SVG directly
+        return send_file(f"{schematic_path}.svg", mimetype='image/svg+xml')
     except Exception as e:
         print(f"Error serving schematic: {e}")
         return jsonify({"error": str(e)})

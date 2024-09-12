@@ -102,7 +102,7 @@
 </g>
 <g id="Value1" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" ns0:DisplayPointName="9" ns0:DisplayTimeStamp="9" ns0:HorzAlign="0" ns0:ShowUOM="True" ns0:IsMultiState="False" ns0:NumberFormat="0.00" ns0:CanonicalNumberFormat="0.00" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\8th808lb808104" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi65 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7006\8TH808LB808104" ns0:PtTagStatus="0" ns0:PtTagTime="6/21/2013 8:47:13 AM" ns0:PtTagValue="100.63 FEET" ns0:Type="7" ns0:Visible="True">
 <rect id="Value1_pbTextBoundingRectEl" x="526" y="679" width="223" height="39" fill="#00FFFF" stroke-width="0"> </rect>
-<text id="Value1_pbTextEl" x="638" y="708" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" ns2:Property="value">99.9 FEET</text>
+<text id="Value1_pbTextEl" x="638" y="708" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" ns2:Property="value">99.91 FEET</text>
 </g>
 <g id="Text13" fill="#808080" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" ns0:IsMultiState="False" ns0:StrikethroughAndUnderline="False" ns0:Type="4" ns0:Visible="True">
 <rect id="Text13_pbTextBoundingRectEl" x="542" y="640" width="198" height="42" fill="#FFFFFF" stroke-width="0"> </rect>
@@ -134,7 +134,7 @@
 </g>
 <g id="Value3" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" ns0:DisplayPointName="9" ns0:DisplayTimeStamp="9" ns0:HorzAlign="0" ns0:ShowUOM="True" ns0:IsMultiState="False" ns0:NumberFormat="0.00" ns0:CanonicalNumberFormat="0.00" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\8th808lb808110" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi65 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7008\8TH808LB808110" ns0:PtTagStatus="0" ns0:PtTagTime="6/21/2013 8:49:49 AM" ns0:PtTagValue="97.09 FEET" ns0:Type="7" ns0:Visible="True">
 <rect id="Value3_pbTextBoundingRectEl" x="1678" y="385" width="203" height="39" fill="#00FFFF" stroke-width="0"> </rect>
-<text id="Value3_pbTextEl" x="1780" y="414" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" ns2:Property="value">102.96 FEET</text>
+<text id="Value3_pbTextEl" x="1780" y="414" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" ns2:Property="value">102.83 FEET</text>
 </g>
 <g id="Bar3" fill="#808080" stroke="none" font-family="Arial" font-size="33.3333320087857" ns0:IsMultiState="False" ns0:LineStyle="0" ns0:Lower="98" ns0:Orientation="0" ns0:ShowScales="False" ns0:DisplayScaleInside="True" ns0:CanonicalNumberFormat="General" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\8th808lb808110" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi65 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?7008\8TH808LB808110" ns0:PtTagStatus="" ns0:PtTagTime="" ns0:PtTagValue="97.09375" ns0:Start="98" ns0:Type="12" ns0:Upper="108" ns0:Visible="True">
 <rect id="Bar3_pbBarBoundingRectEl" x="1891" y="381" width="25" height="429" fill="#00FFFF" stroke="#808080" stroke-width="2px" font-family="Arial" font-size="33.3333320087857"> </rect>
@@ -142,7 +142,7 @@
 </g>
 <g id="Value4" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" ns0:DisplayPointName="9" ns0:DisplayTimeStamp="9" ns0:HorzAlign="0" ns0:ShowUOM="True" ns0:IsMultiState="False" ns0:NumberFormat="0.00" ns0:CanonicalNumberFormat="0.00" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\8th808fyf808437" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi66 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?6535\8TH808FYF808437" ns0:PtTagStatus="0" ns0:PtTagTime="6/21/2013 8:51:55 AM" ns0:PtTagValue="3.40 MGD" ns0:Type="7" ns0:Visible="True">
 <rect id="Value4_pbTextBoundingRectEl" x="293" y="921" width="175" height="39" fill="#FFFF00" stroke-width="0"> </rect>
-<text id="Value4_pbTextEl" x="380" y="950" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" ns2:Property="value">0.35 mgd</text>
+<text id="Value4_pbTextEl" x="380" y="950" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" ns2:Property="value">0.18 mgd</text>
 </g>
 <g id="Genericarrowdiagonal_1" ns0:FillColor="255" transform="translate(467,928)" ns0:FillStyle="3" ns0:BackgroundColor="-1" ns0:IsMultiState="False" ns0:Type="16" ns0:Visible="True" ns0:TBHandle="33008" ns0:Rotation="0" ns0:Flip="2">
 <rect id="Genericarrowdiagonal_1_pbBoundingRectEl" x="467" y="928" width="53" height="32" fill="none" stroke-width="0"> </rect>
@@ -152,7 +152,7 @@
 </g>
 <g id="Value5" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" ns0:DisplayPointName="9" ns0:DisplayTimeStamp="9" ns0:HorzAlign="0" ns0:ShowUOM="True" ns0:IsMultiState="False" ns0:NumberFormat="0.00" ns0:CanonicalNumberFormat="0.00" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\8th808fyf808435" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi66 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?6532\8TH808FYF808435" ns0:PtTagStatus="0" ns0:PtTagTime="6/21/2013 8:47:39 AM" ns0:PtTagValue="1.00 MGD" ns0:Type="7" ns0:Visible="True">
 <rect id="Value5_pbTextBoundingRectEl" x="1150" y="526" width="175" height="39" fill="#FFFF00" stroke-width="0"> </rect>
-<text id="Value5_pbTextEl" x="1238" y="555" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" ns2:Property="value">0.2 mgd</text>
+<text id="Value5_pbTextEl" x="1238" y="555" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" ns2:Property="value">0.21 mgd</text>
 </g>
 <g id="Value6" fill="#0000FF" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" ns0:DisplayPointName="9" ns0:DisplayTimeStamp="9" ns0:HorzAlign="0" ns0:ShowUOM="True" ns0:IsMultiState="False" ns0:NumberFormat="0.00" ns0:CanonicalNumberFormat="0.00" ns0:TagInfoType="0" ns2:PtTagName="\\wtdhistpi\8th808fyf808431" ns0:PersistString="92 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?18c52d4b-6552-4167-8296-0e56eef24fc6\wtdhistpi66 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?6528\8TH808FYF808431" ns0:PtTagStatus="0" ns0:PtTagTime="6/21/2013 8:50:53 AM" ns0:PtTagValue="0.00 MGD" ns0:Type="7" ns0:Visible="True">
 <rect id="Value6_pbTextBoundingRectEl" x="1503" y="642" width="175" height="39" fill="#00FFFF" stroke-width="0"> </rect>
