@@ -1,12 +1,11 @@
-// App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';  // Make sure Link is imported here
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import RegulatorStations from './components/regulator-station/RegulatorStations';
-import Station from './components/regulator-station/Station';
-import stations from './components/config/stationsConfig';  // Import the stations configuration
+import RegulatorStations from './components/stations/RegulatorStations';
+import Station from './components/stations/Station';
+import stations from './components/config/stationsConfig';
 
 function Home() {
   return (

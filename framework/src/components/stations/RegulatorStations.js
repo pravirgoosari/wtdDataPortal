@@ -22,27 +22,26 @@ function RegulatorStations() {
           <tbody>
             <tr><td><Link to="/11th-ave-nw-of">11th Ave. NW O.F.</Link></td></tr>
             <tr><td><Link to="/3rd-ave-ewing-st">3rd Ave and Ewing St.</Link></td></tr>
-            <tr><td><Link to="/8th-ave">8th Ave.</Link></td></tr> {/* Link to the new page */}
-            <tr><td>Ballard R.S.</td></tr>
-            <tr><td>Brandon R.S.</td></tr>
-            <tr><td>Canal St. OF Weir</td></tr>
-            <tr><td>Chelan Ave. R.S</td></tr>
-            <tr><td>Connecticut. R.S.</td></tr>
-            <tr><td>Denny Way - LU R.S.</td></tr>
-            <tr><td>Denny Way Local R.S.</td></tr>
-            <tr><td>Dexter Ave. R.S.</td></tr>
-            <tr><td>Hanford #1 R.S.</td></tr>
-            <tr><td>Hanford #2 R.S.</td></tr>
-            <tr><td>Harbor Ave. R.S.</td></tr>
-            <tr><td>King St. R.S.</td></tr>
-            <tr><td>Lake City Tunnel R.S.</td></tr>
-            <tr><td>Lander R.S.</td></tr>
-            <tr><td>Matthews Lakeline</td></tr>
-            <tr><td>Montlake R.S.</td></tr>
-            <tr><td>Norfolk St. R.S.</td></tr>
-            <tr><td>S Michigan St. R.S.</td></tr>
-            <tr><td>University R.S.</td></tr>
-            <tr><td>West Michigan St. R.S</td></tr>
+            <tr><td><Link to="/8th-ave">8th Ave.</Link></td></tr>
+            <tr><td><Link to="/ballard">Ballard R.S.</Link></td></tr>
+            <tr><td><Link to="/brandon">Brandon R.S.</Link></td></tr>
+            <tr><td><Link to="/canal-st-of-weir">Canal St. OF Weir</Link></td></tr>
+            <tr><td><Link to="/chelan">Chelan Ave. R.S</Link></td></tr>
+            <tr><td><Link to="/connecticut">Connecticut. R.S.</Link></td></tr>
+            <tr><td><Link to="/denny-lu">Denny Way - LU R.S.</Link></td></tr>
+            <tr><td><Link to="/denny-local">Denny Way Local R.S.</Link></td></tr>
+            <tr><td><Link to="/dexter">Dexter Ave. R.S.</Link></td></tr>
+            <tr><td><Link to="/hanford">Hanford #2 R.S.</Link></td></tr>
+            <tr><td><Link to="/harbor">Harbor Ave. R.S.</Link></td></tr>
+            <tr><td><Link to="/king">King St. R.S.</Link></td></tr>
+            <tr><td><Link to="/lake-city">Lake City Tunnel R.S.</Link></td></tr>
+            <tr><td><Link to="/lander">Lander R.S.</Link></td></tr>
+            <tr><td><Link to="/matthewslakeline">Matthews Lakeline</Link></td></tr>
+            <tr><td><Link to="/montlake">Montlake R.S.</Link></td></tr>
+            <tr><td><Link to="/norfolk">Norfolk St. R.S.</Link></td></tr>
+            <tr><td><Link to="/southmichigan">S Michigan St. R.S.</Link></td></tr>
+            <tr><td><Link to="/university">University R.S.</Link></td></tr>
+            <tr><td><Link to="/westmichigan">West Michigan St. R.S</Link></td></tr> {/* Link to the new page */}
           </tbody>
         </table>
       </div>

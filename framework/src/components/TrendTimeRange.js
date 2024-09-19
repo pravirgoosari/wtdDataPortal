@@ -29,14 +29,14 @@ const TrendTimeRange = ({ onSinglePlotDataChange, onMultiPlotDataChange, selecte
         endDateTime: endDateTimeFormatted,
         interval: interval,
         type: selectedValue,
-        station: station // Use the passed station prop here
+        station: station
       });
 
       const multiPointResponse = await axios.post('http://localhost:5000/multipoint_trend', {
         startDateTime: startDateTimeFormatted,
         endDateTime: endDateTimeFormatted,
         interval: interval,
-        station: station // Use the passed station prop here
+        station: station
       });
 
       // Pass the response data to the parent component

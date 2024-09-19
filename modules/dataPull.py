@@ -25,24 +25,25 @@ def convert_values_to_frame(pi_data, tagname):
         values = []
         for event in pi_data:
             edate = event.Timestamp.LocalTime
-            dates.append(pd.to_datetime(edate.ToString(
-                'yyyy-MM-dd HH:mm:ss')))
+            dates.append(pd.to_datetime(edate.ToString("yyyy-MM-dd HH:mm:ss")))
             try:
-                if str(event.Value) == '1':
+                if str(event.Value) == "1":
                     values.append(1.0)
-                elif str(event.Value) == '0':
+                elif str(event.Value) == "0":
                     values.append(0.0)
                 else:
                     value = float(event.Value)
                     values.append(value)
             except:
                 values.append(np.nan)
-        data = pd.DataFrame(index=np.asarray(dates),
-                            data=np.asarray(values, dtype=np.float64),
-                            columns=[tagname])
+        data = pd.DataFrame(
+            index=np.asarray(dates),
+            data=np.asarray(values, dtype=np.float64),
+            columns=[tagname],
+        )
         # Convert index to column
         data = data.reset_index()
-        data.rename(columns={'index': 'DateTime'}, inplace=True)
+        data.rename(columns={"index": "DateTime"}, inplace=True)
         return data
     else:
         return None
@@ -58,15 +59,18 @@ def retrieve_recorded_to_frame(tagname, pi_server, start, end, block_length=60):
     if end1 > end_dt:
         end1 = end_dt
     while end1 < end_dt + dt.timedelta(days=block_length):
-        print('Retrieve {0} to {1}'.format(start1, end1))
-        af_time_range = AFTimeRange(start1.strftime('%Y-%m-%d %H:%M:%S'),
-                                    end1.strftime('%Y-%m-%d %H:%M:%S'))
-        recorded = point.RecordedValues(af_time_range, AFBoundaryType.Inside, '',
-                                        False)
+        print("Retrieve {0} to {1}".format(start1, end1))
+        af_time_range = AFTimeRange(
+            start1.strftime("%Y-%m-%d %H:%M:%S"), end1.strftime("%Y-%m-%d %H:%M:%S")
+        )
+        recorded = point.RecordedValues(af_time_range, AFBoundaryType.Inside, "", False)
         data = convert_values_to_frame(recorded, tagname)
         if data is None:
-            print('No recorded values for {0} between {1} and {2}'.format(
-                tagname, start1, end1))
+            print(
+                "No recorded values for {0} between {1} and {2}".format(
+                    tagname, start1, end1
+                )
+            )
         else:
             df_list.append(data)
         start1 = end1 + dt.timedelta(seconds=1)
@@ -81,7 +85,9 @@ def retrieve_recorded_to_frame(tagname, pi_server, start, end, block_length=60):
         return None
 
 
-def retrieve_interpolated_to_frame(tagname, pi_server, start, end, interval, block_length=60):
+def retrieve_interpolated_to_frame(
+    tagname, pi_server, start, end, interval, block_length=60
+):
 
     point = PIPoint.FindPIPoint(pi_server, tagname)
     af_time_span = AFTimeSpan.Parse(interval)
@@ -93,15 +99,18 @@ def retrieve_interpolated_to_frame(tagname, pi_server, start, end, interval, blo
     if end1 > end_dt:
         end1 = end_dt
     while end1 < end_dt + dt.timedelta(days=block_length):
-        print('Retrieve {0} to {1}'.format(start1, end1))
-        af_time_range = AFTimeRange(start1.strftime('%Y-%m-%d %H:%M:%S'),
-                                    end1.strftime('%Y-%m-%d %H:%M:%S'))
-        interpolated = point.InterpolatedValues(af_time_range, af_time_span, '',
-                                                False)
+        print("Retrieve {0} to {1}".format(start1, end1))
+        af_time_range = AFTimeRange(
+            start1.strftime("%Y-%m-%d %H:%M:%S"), end1.strftime("%Y-%m-%d %H:%M:%S")
+        )
+        interpolated = point.InterpolatedValues(af_time_range, af_time_span, "", False)
         data = convert_values_to_frame(interpolated, tagname)
         if data is None:
-            print('No interpolated values for {0} between {1} and {2}'.format(
-                tagname, start1, end1))
+            print(
+                "No interpolated values for {0} between {1} and {2}".format(
+                    tagname, start1, end1
+                )
+            )
         else:
             df_list.append(data)
         start1 = end1 + pd.Timedelta(interval)
@@ -111,14 +120,17 @@ def retrieve_interpolated_to_frame(tagname, pi_server, start, end, interval, blo
             end1 = end1 + dt.timedelta(days=block_length)
     data = pd.concat(df_list, axis=0)
     if data is None:
-        print('No interpolated values for {0} between {1} and {2}'.format(
-            tagname, start, end))
+        print(
+            "No interpolated values for {0} between {1} and {2}".format(
+                tagname, start, end
+            )
+        )
     else:
         return data
 
 
 def merge_df_on_DateTime(df1, df2):
-    combined_df = pd.merge(df1, df2, on='DateTime')
+    combined_df = pd.merge(df1, df2, on="DateTime")
     return combined_df
 
 
