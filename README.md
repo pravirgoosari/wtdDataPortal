@@ -16,7 +16,7 @@
 13. [Deployment and Maintenance](#deployment-and-maintenance)
 
 ## 1. Project Overview
-The WTD Data Portal is a comprehensive web application designed for data visualization of water treatment systems. It replaces the outdated Sharepoint-based system that used Pi Webparts. The new portal utilizes a Flask backend with a React frontend to provide real-time and historical data retrieval, visualization, and analysis capabilities for wastewater facility stations. This project will be found at https://github.com/lizaclark/wtd_tools.git/tree/wtdDataPortal.
+The WTD Data Portal is a comprehensive web application designed for data visualization of water treatment systems. It replaces the outdated Sharepoint-based system that used Pi Webparts. The new portal utilizes a Flask backend with a React frontend to provide real-time and historical data retrieval, visualization, and analysis capabilities for wastewater facility stations. This project will be found at [https://github.com/lizaclark/wtd_tools.git/tree/wtdDataPortal](https://github.com/lizaclark/wtd_tools/tree/wtdDataPortal).
 
 Key Features:
 - Retrieves data from PI Server using the PI SDK
@@ -281,7 +281,7 @@ To set up the WTD Data Portal, ensure you have the following prerequisites:
 - Git for version control
 
 Installation steps:
-1. Clone the repository: `git clone https://github.com/lizaclark/wtd_tools.git/tree/wtdDataPortal.`
+1. Clone the repository: `git clone [https://github.com/lizaclark/wtd_tools.git/tree/wtdDataPortal.](https://github.com/lizaclark/wtd_tools/tree/wtdDataPortal)`
 2. Set up the backend:
    ```
    cd wtd-data-portal/backend
