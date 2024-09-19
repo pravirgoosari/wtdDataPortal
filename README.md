@@ -79,8 +79,16 @@ wtdDataPortal/
 │           └── css/
 │               ├── TrendTimeRange.css
 │           └── stations/
+│               ├── Brightwater.js
+│               ├── Carnation.js
+│               ├── EastSidePumpStations.js
+│               ├── Help.js
+│               ├── OffsiteFacilities.js
 │               ├── RegulatorStations.js
+│               ├── SouthTreatmentPlants.js
 │               ├── Station.js
+│               ├── TreatmentPlants.js
+│               ├── WestSidePumpStations.js
 ├── modules/
 │   ├── __init__.py
 │   ├── dataPull.py
@@ -179,7 +187,6 @@ The frontend is built using React and consists of several components:
 
 - `App.js`: The main React component
   - Handles routing and overall application structure
-- `RegulatorStations.js`: Component for displaying a list of regulator stations
 - `stationsConfig.js`: Stores data specific to each station
 - `Station.js`: Component for dynamically handling each station page by passing in data from stationsConfig.js
 - `TrendTimeRange.js`: Component for handling time range selection and data fetching
