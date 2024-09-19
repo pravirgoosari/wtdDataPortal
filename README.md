@@ -12,7 +12,8 @@
 9. [Configuration and Environment Setup](#configuration-and-environment-setup)
 10. [Error Handling and Security](#error-handling-and-security)
 11. [Code Examples and Explanations](#code-examples-and-explanations)
-12. [Deployment and Maintenance](#deployment-and-maintenance)
+12. [Expansion](#expansion)
+13. [Deployment and Maintenance](#deployment-and-maintenance)
 
 ## 1. Project Overview
 The WTD Data Portal is a comprehensive web application designed for data visualization of water treatment systems. It replaces the outdated Sharepoint-based system that used Pi Webparts. The new portal utilizes a Flask backend with a React frontend to provide real-time and historical data retrieval, visualization, and analysis capabilities for wastewater facility stations. This project will be found at https://github.com/lizaclark/wtd_tools.git/tree/wtdDataPortal.
@@ -401,7 +402,25 @@ const TrendTimeRange = ({ onSinglePlotDataChange, onMultiPlotDataChange, selecte
 ```
 This React component handles user input for time range selection and initiates data fetching and CSV download operations. It demonstrates how user interactions are managed and how data is requested from the backend.
 
-## 12. Deployment and Maintenance
+## 12. Expansion
+To expand to more stations, follow these steps:                                  * Consider automation for these steps
+1.	Gather the Pi Tags for the chosen station *
+2.	Write them in ‘.env’ with corresponding variables *
+3.	Fill out station information in ‘stationsConfig.py’ with svg path, ‘.env’ variables for multipoint mapping, and svg ID values for singlepoint mapping *
+4.	Fill out station information in ‘stationsConfig.js’ and map singlepoint values from ‘stationsConfig.py’ to corresponding value IDs in svg (see svg code for corresponding Pi tags, typically at top) *
+5.	Convert corresponding jpg image to svg (recommend using https://webutility.io/image-to-svg-converter)
+6.	Navigate to an online svg compiler (recommend using https://www.svgviewer.dev)
+7.	Copy paste original svg file into compiler
+8.	At top, change fill to “none"
+9.	Search for “jpg” and delete entire image component
+10.	Search for first mention of “xlink:xid="">” and right after, copy paste svg code from step 5 there
+11.	Delete the svg component of the code before and after the link, leaving only the image component and dimensions
+12.	Change the image dimensions to match the rest of the frame (can be found at top of svg file)
+13.	Upload new svg code to “./modules/PI/webparts/CSOSites/…”
+14.	Edit link routes under the page(s) of which the station is located if needed
+15.	Save and run code
+
+## 13. Deployment and Maintenance
 - The application can be deployed on a web server with Python and Node.js support
 - Use a process manager like PM2 for the Node.js frontend
 - Use Gunicorn or uWSGI as a WSGI server for the Flask backend
